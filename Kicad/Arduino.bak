@@ -98,4 +98,8 @@ Text HLabel 2450 3050 0    60   Output ~ 0
 Vin
 Wire Wire Line
 	3550 3050 2450 3050
+Text HLabel 6800 3200 2    60   Output ~ 0
+Measure_pH_or_Temp
+Wire Wire Line
+	5750 3200 6800 3200
 $EndSCHEMATC

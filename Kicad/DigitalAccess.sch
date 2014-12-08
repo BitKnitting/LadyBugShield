@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 8
 Title ""
-Date "4 dec 2014"
+Date "8 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -135,16 +135,22 @@ Text HLabel 3550 4050 0    60   Output ~ 0
 AGND
 Wire Wire Line
 	3850 4050 3550 4050
-Text HLabel 7100 2900 2    60   Input ~ 0
+Text HLabel 6000 3150 2    60   Input ~ 0
 pH_AIN
-Text HLabel 7100 3150 2    60   Input ~ 0
+Text HLabel 6000 3450 2    60   Input ~ 0
 EC_AIN
-Text HLabel 7150 3450 2    60   Input ~ 0
-Therm_AIN
-Text HLabel 7200 3750 2    60   Input ~ 0
+Text HLabel 6000 3300 2    60   Input ~ 0
 VGND
 Text Notes 8200 2050 2    60   ~ 0
 TBD: MUX to switch between pH and  Thermistor AIN
-Text HLabel 7050 4200 2    60   Input ~ 0
-Measure_pH_or_Temp
+Wire Wire Line
+	5250 3150 6000 3150
+Wire Wire Line
+	5250 3300 6000 3300
+Wire Wire Line
+	5250 3450 6000 3450
+Text HLabel 6000 3600 2    60   Input ~ 0
+VGND
+Wire Wire Line
+	5250 3600 6000 3600
 $EndSCHEMATC

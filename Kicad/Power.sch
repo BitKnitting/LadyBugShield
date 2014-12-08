@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 7 8
 Title ""
-Date "4 dec 2014"
+Date "8 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -106,7 +106,7 @@ $EndComp
 Wire Wire Line
 	5600 4100 5600 3750
 Wire Wire Line
-	2850 4100 7200 4100
+	2850 4100 10050 4100
 Wire Wire Line
 	7200 4100 7200 3950
 Wire Wire Line
@@ -132,7 +132,7 @@ Connection ~ 7200 3300
 Wire Wire Line
 	7700 3900 7700 4150
 Wire Wire Line
-	7700 4650 7700 4900
+	7700 4650 7700 5100
 $Comp
 L MC78L05 U3
 U 1 1 54412DB6
@@ -333,8 +333,8 @@ For discussion (see pdf on ground planes)
 Text HLabel 7500 5100 0    60   Output ~ 0
 AGND
 Wire Wire Line
-	7500 5100 7700 5100
-Wire Wire Line
-	7700 5100 7700 4900
-Connection ~ 5250 4100
+	7700 5100 7500 5100
+Connection ~ 7200 4100
+Text HLabel 10050 4100 2    60   Output ~ 0
+AGND
 $EndSCHEMATC

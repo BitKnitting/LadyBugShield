@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 8
 Title ""
-Date "4 dec 2014"
+Date "8 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -98,8 +98,24 @@ Text HLabel 2450 3050 0    60   Output ~ 0
 Vin
 Wire Wire Line
 	3550 3050 2450 3050
-Text HLabel 6800 3200 2    60   Output ~ 0
-Measure_pH_or_Temp
 Wire Wire Line
-	5750 3200 6800 3200
+	3550 2150 3050 2150
+Wire Wire Line
+	3050 2150 3050 750 
+Wire Wire Line
+	3050 750  5900 750 
+Wire Wire Line
+	5900 750  5900 1600
+Wire Wire Line
+	5900 1600 5750 1600
+Text Notes 6150 1150 0    60   ~ 0
+Using Arduino's ADC for Thermistor readings.  AFEF will use 3.3V.
+Text Notes 1300 3350 0    60   ~ 0
+Vin comes from power source.  NOT USB
+Text HLabel 2900 4150 0    60   Input ~ 0
+Therm_AIN
+Wire Wire Line
+	3550 4150 2900 4150
+Text Notes 7450 3650 0    60   ~ 0
+Pumps not used during sensor readings.
 $EndSCHEMATC

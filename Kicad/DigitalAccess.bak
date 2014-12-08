@@ -145,4 +145,6 @@ Text HLabel 7200 3750 2    60   Input ~ 0
 VGND
 Text Notes 8200 2050 2    60   ~ 0
 TBD: MUX to switch between pH and  Thermistor AIN
+Text HLabel 7050 4200 2    60   Input ~ 0
+Measure_pH_or_Temp
 $EndSCHEMATC

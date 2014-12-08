@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 8
 Title ""
-Date "4 dec 2014"
+Date "8 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -60,7 +60,7 @@ F7 "Pump1" O R 3300 4700 60
 F8 "Pump3" O R 3300 5100 60 
 F9 "ALERT" I R 3300 2600 60 
 F10 "Vin" O L 800 5250 60 
-F11 "Measure_pH_or_Temp" O R 3300 2950 60 
+F11 "Therm_AIN" I R 3300 4200 60 
 $EndSheet
 $Sheet
 S 4050 1650 1900 2100
@@ -74,9 +74,7 @@ F5 "ALERT" O L 4050 2600 60
 F6 "AGND" O R 5950 3450 60 
 F7 "pH_AIN" I R 5950 2050 60 
 F8 "EC_AIN" I R 5950 2300 60 
-F9 "Therm_AIN" I R 5950 2550 60 
-F10 "VGND" I R 5950 2800 60 
-F11 "Measure_pH_or_Temp" I L 4050 2950 60 
+F9 "VGND" I R 5950 2800 60 
 $EndSheet
 $Sheet
 S 6750 850  2550 1250
@@ -241,12 +239,6 @@ Wire Wire Line
 Wire Wire Line
 	6600 2300 5950 2300
 Wire Wire Line
-	6750 4200 6450 4200
-Wire Wire Line
-	6450 4200 6450 2550
-Wire Wire Line
-	6450 2550 5950 2550
-Wire Wire Line
 	5950 2800 6350 2800
 Wire Wire Line
 	6350 2800 6350 6850
@@ -306,5 +298,5 @@ Wire Wire Line
 	4800 6850 9800 6850
 Connection ~ 6350 6850
 Wire Wire Line
-	3300 2950 4050 2950
+	3300 4200 6750 4200
 $EndSCHEMATC
