@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 8
 Title ""
-Date "8 dec 2014"
+Date "17 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -46,10 +46,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 2500 2450 0    60   Output ~ 0
-V+_ARD
-Wire Wire Line
-	3550 2450 2500 2450
 $Comp
 L ARDUINOPINS ARD1
 U 1 1 53E0F48C
@@ -61,17 +57,12 @@ F 3 "~" H 5200 2200 60  0000 C CNN
 	1    4650 3150
 	1    0    0    -1  
 $EndComp
-Text HLabel 2500 2650 0    60   Input ~ 0
-GND_ARD
 Wire Wire Line
 	2500 2650 3550 2650
 Wire Wire Line
-	6800 3800 5750 3800
+	6800 3000 5750 3000
 Wire Wire Line
-	3550 2850 3200 2850
-Wire Wire Line
-	3200 2850 3200 2650
-Connection ~ 3200 2650
+	2500 2850 3550 2850
 Text HLabel 2900 4350 0    60   BiDi ~ 0
 SDA
 Wire Wire Line
@@ -80,42 +71,30 @@ Text HLabel 2900 4550 0    60   Output ~ 0
 SCL
 Wire Wire Line
 	2900 4550 3550 4550
-Text HLabel 6800 3800 2    59   Output ~ 0
+Text HLabel 6800 3000 2    59   Output ~ 0
 Pump2
-Text HLabel 6800 4000 2    59   Output ~ 0
+Text HLabel 6800 3200 2    59   Output ~ 0
 Pump1
 Wire Wire Line
-	6800 4000 5750 4000
-Text HLabel 6800 3600 2    59   Output ~ 0
+	6800 3200 5750 3200
+Text HLabel 6800 2800 2    59   Output ~ 0
 Pump3
 Wire Wire Line
-	5750 3600 6800 3600
-Text HLabel 6800 3400 2    59   Input ~ 0
+	5750 2800 6800 2800
+Text HLabel 2850 4150 0    59   Input ~ 0
 ALERT
 Wire Wire Line
-	6800 3400 5750 3400
-Text HLabel 2450 3050 0    60   Output ~ 0
-Vin
-Wire Wire Line
 	3550 3050 2450 3050
-Wire Wire Line
-	3550 2150 3050 2150
-Wire Wire Line
-	3050 2150 3050 750 
-Wire Wire Line
-	3050 750  5900 750 
-Wire Wire Line
-	5900 750  5900 1600
-Wire Wire Line
-	5900 1600 5750 1600
-Text Notes 6150 1150 0    60   ~ 0
-Using Arduino's ADC for Thermistor readings.  AFEF will use 3.3V.
 Text Notes 1300 3350 0    60   ~ 0
-Vin comes from power source.  NOT USB
-Text HLabel 2900 4150 0    60   Input ~ 0
-Therm_AIN
-Wire Wire Line
-	3550 4150 2900 4150
-Text Notes 7450 3650 0    60   ~ 0
+Vin comes from power source (i.e: Not USB)
+Text Notes 7450 2850 0    60   ~ 0
 Pumps not used during sensor readings.
+Text GLabel 2500 2650 0    60   Output ~ 0
+GND
+Text GLabel 2450 3050 0    60   Output ~ 0
+Vin
+Text GLabel 2500 2850 0    60   Output ~ 0
+GND
+Wire Wire Line
+	3550 4150 2850 4150
 $EndSCHEMATC

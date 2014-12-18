@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 8
 Title ""
-Date "8 dec 2014"
+Date "17 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -62,33 +62,31 @@ F 3 "~" H 3200 2400 30  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R 10K
+L R R7
 U 1 1 5463DA60
 P 3550 2400
-F 0 "10K" V 3630 2400 40  0000 C CNN
-F 1 "3K" V 3557 2401 40  0000 C CNN
+F 0 "R7" V 3630 2400 40  0000 C CNN
+F 1 "10K" V 3557 2401 40  0000 C CNN
 F 2 "~" V 3480 2400 30  0000 C CNN
 F 3 "~" H 3550 2400 30  0000 C CNN
 	1    3550 2400
 	1    0    0    -1  
 $EndComp
-Text HLabel 2400 2100 0    60   Input ~ 0
-V+_WallWart
 $Comp
 L C C1
 U 1 1 546637F5
-P 5250 2450
-F 0 "C1" H 5250 2550 40  0000 L CNN
-F 1 ".1u" H 5256 2365 40  0000 L CNN
-F 2 "~" H 5288 2300 30  0000 C CNN
-F 3 "~" H 5250 2450 60  0000 C CNN
-	1    5250 2450
+P 5700 2500
+F 0 "C1" H 5700 2600 40  0000 L CNN
+F 1 ".1u" H 5706 2415 40  0000 L CNN
+F 2 "~" H 5738 2350 30  0000 C CNN
+F 3 "~" H 5700 2500 60  0000 C CNN
+	1    5700 2500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	3850 3650 3850 4050
 Wire Wire Line
-	2400 2100 5250 2100
+	2400 2100 5700 2100
 Wire Wire Line
 	3550 2100 3550 2150
 Wire Wire Line
@@ -102,10 +100,10 @@ Connection ~ 3550 3000
 Wire Wire Line
 	3850 3150 2400 3150
 $Comp
-L ADS1015 U?
+L ADS1015 U4
 U 1 1 54804BC7
 P 4550 3300
-F 0 "U?" H 4750 3850 60  0000 L CNN
+F 0 "U4" H 4750 3850 60  0000 L CNN
 F 1 "ADS1015" H 4700 2750 60  0000 L CNN
 F 2 "" H 4550 3300 60  0000 C CNN
 F 3 "" H 4550 3300 60  0000 C CNN
@@ -127,30 +125,37 @@ Wire Wire Line
 	3200 2650 3200 3150
 Connection ~ 3200 3150
 Wire Wire Line
-	5250 2950 5250 2650
-Wire Wire Line
-	5250 2100 5250 2250
+	5250 2100 5250 2950
 Connection ~ 3550 2100
-Text HLabel 3550 4050 0    60   Output ~ 0
-AGND
 Wire Wire Line
 	3850 4050 3550 4050
 Text HLabel 6000 3150 2    60   Input ~ 0
 pH_AIN
-Text HLabel 6000 3450 2    60   Input ~ 0
-EC_AIN
 Text HLabel 6000 3300 2    60   Input ~ 0
-VGND
-Text Notes 8200 2050 2    60   ~ 0
-TBD: MUX to switch between pH and  Thermistor AIN
+EC_AIN
 Wire Wire Line
 	5250 3150 6000 3150
 Wire Wire Line
 	5250 3300 6000 3300
 Wire Wire Line
 	5250 3450 6000 3450
-Text HLabel 6000 3600 2    60   Input ~ 0
-VGND
 Wire Wire Line
 	5250 3600 6000 3600
+Wire Wire Line
+	5700 2100 5700 2300
+Connection ~ 5250 2100
+Text GLabel 6000 3600 2    60   Input ~ 0
+VGND
+Text GLabel 3550 4050 0    60   Output ~ 0
+GND
+Text GLabel 5800 2800 2    60   Output ~ 0
+GND
+Wire Wire Line
+	5700 2700 5700 2800
+Wire Wire Line
+	5700 2800 5800 2800
+Text GLabel 2400 2100 0    60   Input ~ 0
+Vclean
+Text HLabel 6000 3450 2    60   Input ~ 0
+Therm_AIN
 $EndSCHEMATC

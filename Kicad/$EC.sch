@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 8
 Title ""
-Date "17 dec 2014"
+Date "18 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -259,23 +259,6 @@ Wire Wire Line
 Text Notes 6850 4900 2    98   ~ 0
 Step 3: Convert AC to DC
 $Comp
-L CONN_1 TP20
-U 1 1 54187FEE
-P 9000 2100
-F 0 "TP20" H 9080 2100 40  0000 L CNN
-F 1 "CONN_1" H 9000 2155 30  0001 C CNN
-F 2 "" H 9000 2100 60  0000 C CNN
-F 3 "" H 9000 2100 60  0000 C CNN
-	1    9000 2100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8850 2100 8850 2300
-Connection ~ 8850 2300
-Wire Wire Line
-	6050 1900 6050 2050
-Connection ~ 6050 2050
-$Comp
 L MCP6244 U1
 U 2 1 5419C202
 P 9500 2300
@@ -332,17 +315,6 @@ Wire Wire Line
 Connection ~ 9400 4200
 Wire Wire Line
 	8750 4200 8850 4200
-$Comp
-L CONN_1 TP12
-U 1 1 544BE33F
-P 6050 1750
-F 0 "TP12" H 6130 1750 40  0000 L CNN
-F 1 "CONN_1" H 6050 1805 30  0001 C CNN
-F 2 "" H 6050 1750 60  0000 C CNN
-F 3 "" H 6050 1750 60  0000 C CNN
-	1    6050 1750
-	0    -1   -1   0   
-$EndComp
 Text Label 8750 3050 0    60   ~ 0
 W_Vout
 Text Label 10000 3150 0    60   ~ 0
@@ -398,20 +370,6 @@ Wire Wire Line
 Wire Wire Line
 	5600 3100 6000 3100
 Connection ~ 6000 3100
-$Comp
-L CONN_1 TP1
-U 1 1 546E16C0
-P 4850 1800
-F 0 "TP1" H 4930 1800 40  0000 L CNN
-F 1 "CONN_1" H 4850 1855 30  0001 C CNN
-F 2 "" H 4850 1800 60  0000 C CNN
-F 3 "" H 4850 1800 60  0000 C CNN
-	1    4850 1800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4700 1800 4700 2150
-Connection ~ 4700 2150
 $Comp
 L R R4
 U 1 1 5486055C
