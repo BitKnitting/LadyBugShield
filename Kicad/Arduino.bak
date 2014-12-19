@@ -81,10 +81,8 @@ Text HLabel 6800 2800 2    59   Output ~ 0
 Pump3
 Wire Wire Line
 	5750 2800 6800 2800
-Text HLabel 6800 3400 2    59   Input ~ 0
+Text HLabel 2850 4150 0    59   Input ~ 0
 ALERT
-Wire Wire Line
-	6800 3400 5750 3400
 Wire Wire Line
 	3550 3050 2450 3050
 Text Notes 1300 3350 0    60   ~ 0
@@ -97,4 +95,6 @@ Text GLabel 2450 3050 0    60   Output ~ 0
 Vin
 Text GLabel 2500 2850 0    60   Output ~ 0
 GND
+Wire Wire Line
+	3550 4150 2850 4150
 $EndSCHEMATC

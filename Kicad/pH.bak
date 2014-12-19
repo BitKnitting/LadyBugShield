@@ -61,8 +61,6 @@ Wire Wire Line
 Wire Wire Line
 	2950 4100 2950 3200
 Connection ~ 2950 3200
-Text Label 4750 3800 0    60   ~ 0
-pin 4
 Text HLabel 5900 3100 2    60   Input ~ 0
 pH_ProbeIN
 Text Notes 6050 3300 2    60   ~ 0

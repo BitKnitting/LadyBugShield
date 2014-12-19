@@ -1,4 +1,4 @@
-update=12/16/2014 8:28:36 AM
+update=12/18/2014 10:19:46 AM
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -53,8 +53,8 @@ LibName32=LettuceBuddy
 version=1
 LastNetListRead=
 UseCmpFile=1
-PadDrill=0.600000000000
-PadDrillOvalY=0.600000000000
+PadDrill=0.970000000000
+PadDrillOvalY=0.970000000000
 PadSizeH=1.500000000000
 PadSizeV=1.500000000000
 PcbTextSizeV=1.500000000000

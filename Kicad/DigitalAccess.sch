@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 8
 Title ""
-Date "17 dec 2014"
+Date "18 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -117,10 +117,6 @@ Wire Wire Line
 Wire Wire Line
 	3700 3500 3850 3500
 Connection ~ 3850 3800
-Wire Wire Line
-	3850 3300 2400 3300
-Text HLabel 2400 3300 0    60   Output ~ 0
-ALERT
 Wire Wire Line
 	3200 2650 3200 3150
 Connection ~ 3200 3150

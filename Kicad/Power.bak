@@ -207,7 +207,7 @@ Connection ~ 3550 1200
 Wire Wire Line
 	3300 1600 3300 1700
 Text Label 3200 2000 0    60   ~ 0
-pin 3
+VGND_V+
 Connection ~ 4000 5400
 Wire Wire Line
 	6950 5250 6950 5400
