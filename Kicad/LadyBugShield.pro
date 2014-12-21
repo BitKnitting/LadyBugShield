@@ -1,6 +1,6 @@
-update=12/20/2014 3:46:05 AM
+update=12/21/2014 2:11:36 AM
 version=1
-last_client=kicad
+last_client=pcbnew
 [cvpcb]
 version=1
 NetIExt=net
@@ -47,6 +47,8 @@ LibName29=contrib
 LibName30=valves
 LibName31=BenchBuddy
 LibName32=LettuceBuddy
+[general]
+version=1
 [pcbnew]
 version=1
 LastNetListRead=
@@ -85,5 +87,3 @@ LibName14=dip_sockets
 LibName15=pga_sockets
 LibName16=valves
 LibName17=LettuceBuddy
-[general]
-version=1
