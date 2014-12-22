@@ -1,4 +1,4 @@
-update=12/21/2014 2:11:36 AM
+update=12/21/2014 3:15:06 AM
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -87,3 +87,7 @@ LibName14=dip_sockets
 LibName15=pga_sockets
 LibName16=valves
 LibName17=LettuceBuddy
+LibName18=oshw-logo-kicad-copper-10mm
+LibName19=OSHW-100px-Front-CU
+LibName20=OSHW-100px-Front-SM
+LibName21=Ladybug_small
