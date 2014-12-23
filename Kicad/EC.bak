@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 8
 Title ""
-Date "20 dec 2014"
+Date "23 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -271,24 +271,24 @@ F 3 "~" H 9600 2300 60  0000 C CNN
 $EndComp
 $Comp
 L MCP6244 U1
-U 3 1 5419C208
+U 1 1 5419C208
 P 5550 2150
 F 0 "U1" H 5650 2350 60  0000 L CNN
 F 1 "MCP6244" H 5600 1950 60  0000 L CNN
 F 2 "~" H 5650 2150 60  0000 C CNN
 F 3 "~" H 5650 2150 60  0000 C CNN
-	3    5550 2150
+	1    5550 2150
 	-1   0    0    -1  
 $EndComp
 $Comp
 L MCP6244 U1
-U 4 1 5419C20E
+U 3 1 5419C20E
 P 5750 5900
 F 0 "U1" H 5850 6100 60  0000 L CNN
 F 1 "MCP6244" H 5800 5700 60  0000 L CNN
 F 2 "~" H 5850 5900 60  0000 C CNN
 F 3 "~" H 5850 5900 60  0000 C CNN
-	4    5750 5900
+	3    5750 5900
 	-1   0    0    -1  
 $EndComp
 Text GLabel 6250 2600 2    60   Input ~ 0
@@ -464,19 +464,19 @@ Connection ~ 4600 5900
 $Comp
 L C C8
 U 1 1 548611AE
-P 2550 5450
-F 0 "C8" H 2550 5550 40  0000 L CNN
-F 1 ".1u" H 2556 5365 40  0000 L CNN
-F 2 "~" H 2588 5300 30  0000 C CNN
-F 3 "~" H 2550 5450 60  0000 C CNN
-	1    2550 5450
+P 5300 1600
+F 0 "C8" H 5300 1700 40  0000 L CNN
+F 1 ".1u" H 5306 1515 40  0000 L CNN
+F 2 "~" H 5338 1450 30  0000 C CNN
+F 3 "~" H 5300 1600 60  0000 C CNN
+	1    5300 1600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2800 5100 2800 5700
+	5550 1250 5550 1850
 Wire Wire Line
-	2550 5250 2800 5250
-Connection ~ 2800 5250
+	5300 1400 5550 1400
+Connection ~ 5550 1400
 Wire Notes Line
 	800  4600 7200 4600
 Wire Notes Line
@@ -500,12 +500,12 @@ Wire Wire Line
 	1650 6850 1650 6000
 Connection ~ 1650 6000
 Wire Wire Line
-	2550 5650 2550 5750
+	5300 1800 5300 1900
 Wire Wire Line
-	2800 6300 2800 6450
-Text GLabel 2800 5100 2    60   Input ~ 0
+	5550 2450 5550 2600
+Text GLabel 5550 1250 2    60   Input ~ 0
 Vclean
-Text GLabel 2800 6450 0    60   Input ~ 0
+Text GLabel 5550 2600 0    60   Input ~ 0
 GND
 Text GLabel 3400 6950 2    60   Input ~ 0
 VGND
@@ -519,15 +519,15 @@ Text GLabel 10800 2450 0    60   Input ~ 0
 VGND
 $Comp
 L MCP6244 U1
-U 1 1 549068E6
+U 4 1 549068E6
 P 2800 6000
 F 0 "U1" H 2900 6200 60  0000 L CNN
 F 1 "MCP6244" H 2850 5800 60  0000 L CNN
 F 2 "~" H 2900 6000 60  0000 C CNN
 F 3 "~" H 2900 6000 60  0000 C CNN
-	1    2800 6000
+	4    2800 6000
 	-1   0    0    -1  
 $EndComp
-Text GLabel 2550 5750 0    60   Input ~ 0
+Text GLabel 5300 1900 0    60   Input ~ 0
 GND
 $EndSCHEMATC
