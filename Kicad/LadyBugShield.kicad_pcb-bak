@@ -6,7 +6,7 @@
     (area 150.800999 63.170999 259.484281 118.820401)
     (thickness 1.6)
     (drawings 16)
-    (tracks 444)
+    (tracks 441)
     (zones 0)
     (modules 55)
     (nets 33)
@@ -32,7 +32,7 @@
   )
 
   (setup
-    (last_trace_width 0.1778)
+    (last_trace_width 0.254)
     (user_trace_width 0.1778)
     (user_trace_width 0.254)
     (user_trace_width 0.381)
@@ -160,7 +160,6 @@
     (add_net N-0000051)
     (add_net N-0000052)
     (add_net N-0000053)
-    (add_net Vin)
   )
 
   (net_class VClean ""
@@ -172,6 +171,7 @@
     (uvia_drill 0.127)
     (add_net VClean)
     (add_net VGND)
+    (add_net Vin)
   )
 
   (module so-8 (layer F.Cu) (tedit 54969A3C) (tstamp 54909C25)
@@ -3445,16 +3445,13 @@
   (segment (start 231.28224 80.76438) (end 226.29114 80.76438) (width 0.6096) (layer F.Cu) (net 31))
   (segment (start 226.29114 80.76438) (end 226.24542 80.8101) (width 0.6096) (layer F.Cu) (net 31) (tstamp 5491F621))
   (segment (start 231.23652 105.7021) (end 231.28224 105.65638) (width 0.254) (layer F.Cu) (net 31) (tstamp 5491F517))
-  (segment (start 181.3052 107.0483) (end 179.4383 107.0483) (width 0.381) (layer F.Cu) (net 32))
+  (segment (start 177.92954 103.65486) (end 177.92954 106.01706) (width 0.6096) (layer F.Cu) (net 32) (status 400000))
+  (segment (start 178.96078 107.0483) (end 181.3052 107.0483) (width 0.6096) (layer F.Cu) (net 32) (tstamp 54996E02) (status 800000))
+  (segment (start 177.92954 106.01706) (end 178.96078 107.0483) (width 0.6096) (layer F.Cu) (net 32) (tstamp 54996DFF))
+  (segment (start 181.3052 107.0483) (end 199.2503 107.0483) (width 0.6096) (layer F.Cu) (net 32) (status 400000))
+  (segment (start 199.2503 107.0483) (end 203.2 110.998) (width 0.6096) (layer F.Cu) (net 32) (tstamp 54996DEC))
+  (segment (start 203.2 110.998) (end 203.2 114.3) (width 0.6096) (layer F.Cu) (net 32) (tstamp 54996DF0) (status 800000))
   (segment (start 177.9016 103.6828) (end 177.92954 103.65486) (width 0.381) (layer F.Cu) (net 32) (tstamp 5495640D))
-  (segment (start 177.9016 105.5116) (end 177.9016 103.6828) (width 0.381) (layer F.Cu) (net 32) (tstamp 5495640A))
-  (segment (start 179.4383 107.0483) (end 177.9016 105.5116) (width 0.381) (layer F.Cu) (net 32) (tstamp 54956408))
-  (segment (start 202.0316 109.601) (end 202.0062 109.601) (width 0.381) (layer F.Cu) (net 32))
-  (segment (start 198.6407 107.0356) (end 181.1528 107.0356) (width 0.381) (layer F.Cu) (net 32) (tstamp 54955BB6))
-  (segment (start 202.0062 109.601) (end 198.6407 107.0356) (width 0.381) (layer F.Cu) (net 32) (tstamp 54955BB0))
-  (segment (start 203.2 114.3) (end 203.2 110.7694) (width 0.381) (layer F.Cu) (net 32))
-  (segment (start 203.2 110.7694) (end 202.0316 109.601) (width 0.381) (layer F.Cu) (net 32) (tstamp 54935098))
-  (segment (start 202.0316 109.601) (end 201.9427 109.5121) (width 0.381) (layer F.Cu) (net 32) (tstamp 54955BAE))
 
   (zone (net 25) (net_name GND) (layer B.Cu) (tstamp 5493F761) (hatch edge 0.508)
     (connect_pads (clearance 0.508))

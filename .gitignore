@@ -39,3 +39,5 @@ Thumbs.db
 #######################
 #Don’t include Kicad Gerber files
 */Kicad/Gerbers/
+#Don’t include Sketchup files
+*/Sketchup/
