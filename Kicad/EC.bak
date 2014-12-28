@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 8
 Title ""
-Date "23 dec 2014"
+Date "27 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -260,13 +260,13 @@ Text Notes 6850 4900 2    98   ~ 0
 Step 3: Convert AC to DC
 $Comp
 L MCP6244 U1
-U 2 1 5419C202
+U 3 1 5419C202
 P 9500 2300
 F 0 "U1" H 9600 2500 60  0000 L CNN
 F 1 "MCP6244" H 9550 2100 60  0000 L CNN
 F 2 "~" H 9600 2300 60  0000 C CNN
 F 3 "~" H 9600 2300 60  0000 C CNN
-	2    9500 2300
+	3    9500 2300
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -282,13 +282,13 @@ F 3 "~" H 5650 2150 60  0000 C CNN
 $EndComp
 $Comp
 L MCP6244 U1
-U 3 1 5419C20E
+U 2 1 5419C20E
 P 5750 5900
 F 0 "U1" H 5850 6100 60  0000 L CNN
 F 1 "MCP6244" H 5800 5700 60  0000 L CNN
 F 2 "~" H 5850 5900 60  0000 C CNN
 F 3 "~" H 5850 5900 60  0000 C CNN
-	3    5750 5900
+	2    5750 5900
 	-1   0    0    -1  
 $EndComp
 Text GLabel 6250 2600 2    60   Input ~ 0

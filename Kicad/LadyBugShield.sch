@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 8
 Title ""
-Date "23 dec 2014"
+Date "27 dec 2014"
 Rev ""
 Comp ""
 Comment1 ""
@@ -195,8 +195,8 @@ F5 "Pump2" I L 4400 5650 60
 F6 "SW_Pump2" I R 6050 5600 60 
 F7 "V+_Pump2" I R 6050 5500 60 
 F8 "Pump3" I L 4400 5850 60 
-F9 "SW_Pump3" I R 6050 5700 60 
-F10 "V+_Pump3" I R 6050 5800 60 
+F9 "SW_Pump3" I R 6050 5800 60 
+F10 "V+_Pump3" I R 6050 5700 60 
 $EndSheet
 Wire Wire Line
 	9950 4400 10200 4400
@@ -224,17 +224,6 @@ F 3 "" H 10000 1000 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CONN_1 TP4
-U 1 1 54956279
-P 10900 1550
-F 0 "TP4" H 10980 1550 40  0000 L CNN
-F 1 "CONN_1" H 10900 1605 30  0001 C CNN
-F 2 "" H 10900 1550 60  0000 C CNN
-F 3 "" H 10900 1550 60  0000 C CNN
-	1    10900 1550
-	1    0    0    -1  
-$EndComp
-$Comp
 L CONN_1 TP2
 U 1 1 5495627F
 P 10050 2450
@@ -245,27 +234,10 @@ F 3 "" H 10050 2450 60  0000 C CNN
 	1    10050 2450
 	0    -1   -1   0   
 $EndComp
-$Comp
-L CONN_1 TP3
-U 1 1 54956285
-P 10950 3000
-F 0 "TP3" H 11030 3000 40  0000 L CNN
-F 1 "CONN_1" H 10950 3055 30  0001 C CNN
-F 2 "" H 10950 3000 60  0000 C CNN
-F 3 "" H 10950 3000 60  0000 C CNN
-	1    10950 3000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	10000 1150 10000 1250
 Connection ~ 10000 1250
 Wire Wire Line
-	10750 1550 10700 1550
-Connection ~ 10700 1550
-Wire Wire Line
 	10050 2600 10050 2750
 Connection ~ 10050 2750
-Wire Wire Line
-	10800 3000 10700 3000
-Connection ~ 10700 3000
 $EndSCHEMATC
