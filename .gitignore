@@ -37,7 +37,8 @@ ehthumbs.db
 Thumbs.db
 # my files
 #######################
-#Don’t include Kicad Gerber files
+#Don’t include Gerber files
 Kicad/Gerbers/
+LBS-TEST1/Gerbers/
 #Don’t include Sketchup files
 Sketchup/
