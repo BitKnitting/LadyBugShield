@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "//psf/Home/Documents/Lettuce Buddy HW/LadyBug Hydro/Laydybug Shield/Kicad/LadyBugShield.sch")
-    (date "12/27/2014 4:06:51 AM")
+    (date "1/17/2015 1:27:41 AM")
     (tool "eeschema (2013-07-07 BZR 4022)-stable"))
   (components
     (comp (ref P3)
@@ -205,7 +205,7 @@
       (sheetpath (names /Power/) (tstamps /547DE6F9/))
       (tstamp 549160D4))
     (comp (ref R15)
-      (value "1K  .5%")
+      (value "10K 1%")
       (libsource (lib device) (part R))
       (sheetpath (names /Temperature/) (tstamps /547DE6A0/))
       (tstamp 540DEB6D))
