@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 8
 Title ""
-Date "17 jan 2015"
+Date "21 jan 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -212,32 +212,4 @@ Wire Wire Line
 	6050 5700 6550 5700
 Wire Wire Line
 	6050 5800 6550 5800
-$Comp
-L CONN_1 TP1
-U 1 1 54956214
-P 10000 1000
-F 0 "TP1" H 10080 1000 40  0000 L CNN
-F 1 "CONN_1" H 10000 1055 30  0001 C CNN
-F 2 "" H 10000 1000 60  0000 C CNN
-F 3 "" H 10000 1000 60  0000 C CNN
-	1    10000 1000
-	0    -1   -1   0   
-$EndComp
-$Comp
-L CONN_1 TP2
-U 1 1 5495627F
-P 10050 2450
-F 0 "TP2" H 10130 2450 40  0000 L CNN
-F 1 "CONN_1" H 10050 2505 30  0001 C CNN
-F 2 "" H 10050 2450 60  0000 C CNN
-F 3 "" H 10050 2450 60  0000 C CNN
-	1    10050 2450
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	10000 1150 10000 1250
-Connection ~ 10000 1250
-Wire Wire Line
-	10050 2600 10050 2750
-Connection ~ 10050 2750
 $EndSCHEMATC
