@@ -36,9 +36,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 8
+Sheet 2 11
 Title ""
-Date "21 jan 2015"
+Date "29 jan 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -93,4 +93,8 @@ Text GLabel 2450 3050 0    60   Output ~ 0
 Vin
 Text GLabel 2500 2850 0    60   Output ~ 0
 GND
+Text HLabel 6800 3400 2    60   Output ~ 0
+EC_Meas_Switch
+Wire Wire Line
+	5750 3400 6800 3400
 $EndSCHEMATC
