@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 11
 Title ""
-Date "29 jan 2015"
+Date "31 jan 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -94,7 +94,11 @@ Vin
 Text GLabel 2500 2850 0    60   Output ~ 0
 GND
 Text HLabel 6800 3400 2    60   Output ~ 0
-EC_Meas_Switch
+EC_Meas_Vin+Vout
 Wire Wire Line
 	5750 3400 6800 3400
+Text HLabel 6800 3600 2    60   Output ~ 0
+EC_Switch_OnOff
+Wire Wire Line
+	5750 3600 6800 3600
 $EndSCHEMATC

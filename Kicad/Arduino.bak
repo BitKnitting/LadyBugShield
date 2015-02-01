@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 11
 Title ""
-Date "28 jan 2015"
+Date "30 jan 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -97,4 +97,8 @@ Text HLabel 6800 3400 2    60   Output ~ 0
 EC_Meas_Switch
 Wire Wire Line
 	5750 3400 6800 3400
+Text HLabel 6800 3600 2    60   Output ~ 0
+Switch_Pin
+Wire Wire Line
+	5750 3600 6800 3600
 $EndSCHEMATC

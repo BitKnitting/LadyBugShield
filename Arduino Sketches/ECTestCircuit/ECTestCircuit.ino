@@ -8,6 +8,7 @@ Copyright Margaret Johnson 1/2015
 Adafruit_ADS1015 ads1015;
 const byte gate_pin = 8;
 const byte ain_pin = 7;
+const byte switch_pin = 6;
 const byte LSB_multiplier = 1;// 2x gain   +/- 2.048V  1 bit = 1mV
 Statistic myStats_Vin;  //from http://playground.arduino.cc/Main/Statistics
 Statistic myStats_ECv;
@@ -16,6 +17,8 @@ void setup(void)
   Serial.begin(9600);
   pinMode(gate_pin,OUTPUT);
   pinMode(ain_pin,OUTPUT);
+  pinMode(switch_pin,OUTPUT);
+
   ads1015.begin();
   //Vpp a bit over 2V
   // ads1015.setGain(GAIN_ONE);     // 1x gain   +/- 4.096V  1 bit = 2mV
@@ -89,21 +92,25 @@ void readEC()
 int readVIn(unsigned int num_readings)
 {
   dischargeCapacitor();
+  digitalWrite(switch_pin,LOW);
   switchTo(VIN);
   for (int i=0;i<num_readings;i++) {
     int results = readADC();
     myStats_Vin.add(results);
   }
+  digitalWrite(switch_pin,HIGH);
   return myStats_Vin.average();
 }
 int readECv(unsigned int num_readings)
 {
   dischargeCapacitor();
+  digitalWrite(switch_pin,LOW);
   switchTo(ECV);
   for (int i=0;i<num_readings;i++) {
     int results = readADC();
     myStats_ECv.add(results);
   }
+  digitalWrite(switch_pin,HIGH);
   return myStats_ECv.average();
 }
 int adcReading(unsigned int num_readings)
@@ -121,16 +128,17 @@ void dischargeCapacitor()
 }
 void switchTo(const byte waveform)
 {
+  Serial.println("Switch");
   if (waveform == VIN) {
     Serial.println("Reading Vin+");
     digitalWrite(ain_pin,HIGH); //See the EC schematic
-    delay(1000);
   }
   else {
     Serial.println("Reading ECv");
     digitalWrite(ain_pin,LOW); //default to ECv
-    delay(1000);
   }
+  Serial.println("Settle...");
+  delay(1000);
 }
 int16_t readADC()
 {

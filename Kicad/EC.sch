@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 11
 Title ""
-Date "29 jan 2015"
+Date "31 jan 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -100,7 +100,7 @@ E4 21 16 E2 E7 6A CE 81 C6 3C A5 93 79 AE 29 E1 BF EC 73 A0 85 C5 FE 1D 05 CE 3A
 19 A9 1F B5 EC 68 0C B1 D7 71 C8 85 73 18 F2 6F 31 C2 3D AB B7 DA 9E 11 ED 7D E6 39 F1 E0 73 CE 
 D9 E2 BF C4 18 F7 0C 4B 5E B4 8D 6F 67 A1 70 71 C5 12 A3 BD DD C9 B3 93 77 93 9B 2B F6 BC 6A 4C 
 31 A6 9D A4 5C 5A 6D B5 D5 56 5B 6D B5 D5 02 ED 0F 8F D8 15 DB 22 89 0B B4 00 00 00 00 49 45 4E 
-44 AE 42 60 82 A9 $EndBitmap
+44 AE 42 60 82 0B $EndBitmap
 EndData
 $EndBitmap
 $Sheet
@@ -808,7 +808,7 @@ A1 47 3C 7B 93 06 F7 66 73 39 E3 12 48 6D BE A9 49 B6 D2 2B C3 6F 94 A9 5C 30 AF
 DD 6A FC 26 38 DD 69 88 F6 93 A9 46 05 06 99 11 A1 75 DB 4B BF C8 6E E3 F8 6C A7 47 F9 B1 F6 14 
 12 D7 1E 39 D3 97 8B E9 CC 09 7E A4 21 84 7B DE 75 BE 6C 10 1D B1 C0 C8 E6 44 20 98 58 88 D3 4B 
 BF A4 FE AC E7 27 87 F5 F3 E7 B2 6E 04 7A D3 5E FF 1F 0B 1A 44 E2 12 6D EC E1 00 00 00 00 49 45 
-4E 44 AE 42 60 82 68 $EndBitmap
+4E 44 AE 42 60 82 69 $EndBitmap
 EndData
 $EndBitmap
 Text Notes 8150 1950 0    100  ~ 0
@@ -859,30 +859,13 @@ Wire Wire Line
 Text GLabel 5000 6800 0    60   Output ~ 0
 GND
 Wire Wire Line
-	5000 6800 5750 6800
-Wire Wire Line
-	5650 5850 5650 6800
-$Comp
-L R R?
-U 1 1 54C7AE26
-P 5750 6200
-F 0 "R?" V 5830 6200 40  0000 C CNN
-F 1 "10K" V 5757 6201 40  0000 C CNN
-F 2 "~" V 5680 6200 30  0000 C CNN
-F 3 "~" H 5750 6200 30  0000 C CNN
-	1    5750 6200
-	1    0    0    -1  
-$EndComp
+	5650 6800 5650 5850
 Wire Wire Line
 	5550 6800 5550 5850
-Connection ~ 5550 6800
 Wire Wire Line
-	5750 5950 5750 5850
-Wire Wire Line
-	5750 6800 5750 6450
-Connection ~ 5650 6800
+	5750 5850 5750 6150
 Text HLabel 6500 6500 2    60   Input ~ 0
-EC_Meas_Switch
+EC_Meas_Vin+Vout
 Wire Wire Line
 	5850 5850 5850 6500
 Wire Wire Line
@@ -897,4 +880,29 @@ Text Notes 6200 5800 0    100  ~ 0
 S = HIGH, Y1 circuit is connected (measure EC_Vin+)
 Text Notes 6200 6050 0    100  ~ 0
 S = LOW, Y0 circuit is connected (measure EC_DCv)
+$Comp
+L R R?
+U 1 1 54CBB29D
+P 5750 6400
+F 0 "R?" V 5830 6400 40  0000 C CNN
+F 1 "10K" V 5757 6401 40  0000 C CNN
+F 2 "~" V 5680 6400 30  0000 C CNN
+F 3 "~" H 5750 6400 30  0000 C CNN
+	1    5750 6400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 6800 5650 6800
+Connection ~ 5550 6800
+Wire Wire Line
+	5750 6650 5750 7050
+Wire Wire Line
+	5750 7050 5000 7050
+Text GLabel 5000 7050 0    60   Input ~ 0
+Vclean
+Text HLabel 6500 6850 2    60   Input ~ 0
+EC_Switch_OnOff
+Wire Wire Line
+	6500 6850 5750 6850
+Connection ~ 5750 6850
 $EndSCHEMATC
