@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 11
 Title ""
-Date "31 jan 2015"
+Date "2 feb 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -88,10 +88,10 @@ Wire Wire Line
 Text GLabel 6050 4150 2    60   Input ~ 0
 VGND
 $Comp
-L MCP6241 U?
+L MCP6241 U1
 U 1 1 54CCCA62
 P 3800 3200
-F 0 "U?" H 3800 3350 60  0000 L CNN
+F 0 "U1" H 3800 3350 60  0000 L CNN
 F 1 "MCP6241" H 3800 3050 60  0000 L CNN
 F 2 "~" H 3800 3200 60  0000 C CNN
 F 3 "~" H 3800 3200 60  0000 C CNN
@@ -108,4 +108,6 @@ Wire Wire Line
 	1750 2550 3900 2550
 Wire Wire Line
 	3900 2550 3900 2900
+Text GLabel 3800 3700 0    60   Input ~ 0
+GND
 $EndSCHEMATC

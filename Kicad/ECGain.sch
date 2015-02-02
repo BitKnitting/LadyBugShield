@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 7 11
 Title ""
-Date "31 jan 2015"
+Date "2 feb 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -75,14 +75,14 @@ Wire Wire Line
 Wire Wire Line
 	5100 5300 4950 5300
 $Comp
-L MCP6244 U?
-U 1 1 54C7A596
+L MCP6244 U5
+U 3 1 54C7A596
 P 5900 3100
-F 0 "U?" H 6000 3300 60  0000 L CNN
+F 0 "U5" H 6000 3300 60  0000 L CNN
 F 1 "MCP6244" H 5950 2900 60  0000 L CNN
 F 2 "~" H 6000 3100 60  0000 C CNN
 F 3 "~" H 6000 3100 60  0000 C CNN
-	1    5900 3100
+	3    5900 3100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -100,44 +100,18 @@ Wire Wire Line
 	5850 4050 5450 4050
 Connection ~ 5450 4050
 $Comp
-L R R?
+L R R17
 U 1 1 54C7A5A6
 P 6100 4050
-F 0 "R?" V 6180 4050 40  0000 C CNN
+F 0 "R17" V 6180 4050 40  0000 C CNN
 F 1 "1K .5%" V 6107 4051 40  0000 C CNN
 F 2 "~" V 6030 4050 30  0000 C CNN
 F 3 "~" H 6100 4050 30  0000 C CNN
 	1    6100 4050
 	0    1    -1   0   
 $EndComp
-$Comp
-L C C?
-U 1 1 54C7A5AC
-P 6150 2550
-F 0 "C?" H 6150 2650 40  0000 L CNN
-F 1 ".1u" H 6156 2465 40  0000 L CNN
-F 2 "~" H 6188 2400 30  0000 C CNN
-F 3 "~" H 6150 2550 60  0000 C CNN
-	1    6150 2550
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	5900 2200 5900 2800
-Wire Wire Line
-	6150 2350 5900 2350
-Connection ~ 5900 2350
-Wire Wire Line
-	6150 2750 6150 2850
-Wire Wire Line
-	5900 3400 5900 3550
-Text GLabel 5900 2200 0    60   Input ~ 0
-Vclean
-Text GLabel 5900 3550 2    60   Input ~ 0
-GND
 Text GLabel 4950 5300 0    60   Input ~ 0
 VGND
-Text GLabel 6150 2850 2    60   Input ~ 0
-GND
 Text HLabel 3450 3000 0    60   Input ~ 0
 EC_Vin+
 Wire Wire Line

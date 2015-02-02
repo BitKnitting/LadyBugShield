@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 11
 Title ""
-Date "31 jan 2015"
+Date "2 feb 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -56,8 +56,9 @@ F3 "SCL" O R 3300 2200 60
 F4 "Pump2" O R 3300 5650 60 
 F5 "Pump1" O R 3300 5450 60 
 F6 "Pump3" O R 3300 5850 60 
-F7 "EC_Switch_OnOff" O R 3300 4400 60 
-F8 "EC_Meas_Vin+Vout" O R 3300 4250 60 
+F7 "EC_Switch_OnOff" O R 3300 4250 60 
+F8 "EC_Meas_Vin+Vout" O R 3300 4100 60 
+F9 "R_Drain" O R 3300 4400 60 
 $EndSheet
 $Sheet
 S 4050 1650 1900 2100
@@ -85,8 +86,9 @@ F0 "EC" 50
 F1 "EC.sch" 50
 F2 "EC_ProbeIN" I R 9350 3950 60 
 F3 "EC_AIN" O L 6750 3850 60 
-F4 "EC_Switch_OnOff" I L 6750 4400 60 
-F5 "EC_Meas_Vin+Vout" I L 6750 4250 60 
+F4 "EC_Switch_OnOff" I L 6750 4250 60 
+F5 "EC_Meas_Vin+Vout" I L 6750 4100 60 
+F6 "R_Drain" I L 6750 4400 60 
 $EndSheet
 $Sheet
 S 1350 700  2350 1300
@@ -216,6 +218,8 @@ Wire Wire Line
 	6300 3850 6300 3550
 Wire Wire Line
 	6300 3550 5950 3550
+Wire Wire Line
+	3300 4100 6750 4100
 Wire Wire Line
 	3300 4250 6750 4250
 Wire Wire Line

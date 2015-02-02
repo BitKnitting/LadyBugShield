@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 11
 Title ""
-Date "31 jan 2015"
+Date "2 feb 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -99,17 +99,6 @@ Wire Wire Line
 Connection ~ 3550 3000
 Wire Wire Line
 	3850 3150 2400 3150
-$Comp
-L ADS1015 U4
-U 1 1 54804BC7
-P 4550 3300
-F 0 "U4" H 4750 3850 60  0000 L CNN
-F 1 "ADS1015" H 4700 2750 60  0000 L CNN
-F 2 "" H 4550 3300 60  0000 C CNN
-F 3 "" H 4550 3300 60  0000 C CNN
-	1    4550 3300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3850 3800 3700 3800
 Wire Wire Line
@@ -154,4 +143,15 @@ Text GLabel 2400 2100 0    60   Input ~ 0
 Vclean
 Text HLabel 6000 3450 2    60   Input ~ 0
 Therm_AIN
+$Comp
+L ADS1015 U4
+U 1 1 54CE4504
+P 4550 3300
+F 0 "U4" H 4750 3850 60  0000 L CNN
+F 1 "ADS1015" H 4700 2750 60  0000 L CNN
+F 2 "~" H 4550 3300 60  0000 C CNN
+F 3 "~" H 4550 3300 60  0000 C CNN
+	1    4550 3300
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 11
 Title ""
-Date "30 jan 2015"
+Date "2 feb 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -100,7 +100,7 @@ E4 21 16 E2 E7 6A CE 81 C6 3C A5 93 79 AE 29 E1 BF EC 73 A0 85 C5 FE 1D 05 CE 3A
 19 A9 1F B5 EC 68 0C B1 D7 71 C8 85 73 18 F2 6F 31 C2 3D AB B7 DA 9E 11 ED 7D E6 39 F1 E0 73 CE 
 D9 E2 BF C4 18 F7 0C 4B 5E B4 8D 6F 67 A1 70 71 C5 12 A3 BD DD C9 B3 93 77 93 9B 2B F6 BC 6A 4C 
 31 A6 9D A4 5C 5A 6D B5 D5 56 5B 6D B5 D5 02 ED 0F 8F D8 15 DB 22 89 0B B4 00 00 00 00 49 45 4E 
-44 AE 42 60 82 0B $EndBitmap
+44 AE 42 60 82 DA $EndBitmap
 EndData
 $EndBitmap
 $Sheet
@@ -808,16 +808,16 @@ A1 47 3C 7B 93 06 F7 66 73 39 E3 12 48 6D BE A9 49 B6 D2 2B C3 6F 94 A9 5C 30 AF
 DD 6A FC 26 38 DD 69 88 F6 93 A9 46 05 06 99 11 A1 75 DB 4B BF C8 6E E3 F8 6C A7 47 F9 B1 F6 14 
 12 D7 1E 39 D3 97 8B E9 CC 09 7E A4 21 84 7B DE 75 BE 6C 10 1D B1 C0 C8 E6 44 20 98 58 88 D3 4B 
 BF A4 FE AC E7 27 87 F5 F3 E7 B2 6E 04 7A D3 5E FF 1F 0B 1A 44 E2 12 6D EC E1 00 00 00 00 49 45 
-4E 44 AE 42 60 82 68 $EndBitmap
+4E 44 AE 42 60 82 75 $EndBitmap
 EndData
 $EndBitmap
 Text Notes 8150 1950 0    100  ~ 0
 Rectify\n
 $Comp
-L 74LVC1G53 U?
+L 74LVC1G53 U2
 U 1 1 54C7A3D8
 P 5350 5200
-F 0 "U?" H 5400 5350 60  0000 C CNN
+F 0 "U2" H 5400 5350 60  0000 C CNN
 F 1 "74LVC1G53" H 5950 5350 60  0000 C CNN
 F 2 "~" H 5450 4800 60  0000 C CNN
 F 3 "~" H 5450 4800 60  0000 C CNN
@@ -849,6 +849,8 @@ U 54C7AF06
 F0 "Rectify" 50
 F1 "Rectify.sch" 50
 F2 "Signal" I L 7400 2250 60 
+F3 "EC_AIN" O R 9600 2400 60 
+F4 "R_Drain" I L 7400 2000 60 
 $EndSheet
 Wire Wire Line
 	6250 5350 7150 5350
@@ -863,9 +865,9 @@ Wire Wire Line
 Wire Wire Line
 	5550 6800 5550 5850
 Wire Wire Line
-	5750 5850 5750 6150
+	5750 5850 5750 6800
 Text HLabel 6500 6500 2    60   Input ~ 0
-EC_Meas_Switch
+EC_Meas_Vin+Vout
 Wire Wire Line
 	5850 5850 5850 6500
 Wire Wire Line
@@ -881,28 +883,46 @@ S = HIGH, Y1 circuit is connected (measure EC_Vin+)
 Text Notes 6200 6050 0    100  ~ 0
 S = LOW, Y0 circuit is connected (measure EC_DCv)
 $Comp
-L R R?
+L R R2
 U 1 1 54CBB29D
-P 5750 6400
-F 0 "R?" V 5830 6400 40  0000 C CNN
-F 1 "10K" V 5757 6401 40  0000 C CNN
-F 2 "~" V 5680 6400 30  0000 C CNN
-F 3 "~" H 5750 6400 30  0000 C CNN
-	1    5750 6400
+P 5750 7050
+F 0 "R2" V 5830 7050 40  0000 C CNN
+F 1 "10K" V 5757 7051 40  0000 C CNN
+F 2 "~" V 5680 7050 30  0000 C CNN
+F 3 "~" H 5750 7050 30  0000 C CNN
+	1    5750 7050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	5000 6800 5650 6800
 Connection ~ 5550 6800
-Wire Wire Line
-	5750 6650 5750 7050
-Wire Wire Line
-	5750 7050 5000 7050
-Text GLabel 5000 7050 0    60   Input ~ 0
+Text GLabel 5000 7300 0    60   Input ~ 0
 Vclean
-Text HLabel 6500 6850 2    60   Input ~ 0
-Switch_Pin
+Text HLabel 6500 6700 2    60   Input ~ 0
+EC_Switch_OnOff
+Text HLabel 1700 1450 0    60   Input ~ 0
+EC_ProbeIN
 Wire Wire Line
-	6500 6850 5750 6850
-Connection ~ 5750 6850
+	1700 1450 4200 1450
+Wire Wire Line
+	4200 1450 4200 1800
+Wire Wire Line
+	4200 1800 4350 1800
+Text HLabel 10550 2400 2    60   Output ~ 0
+EC_AIN
+Wire Wire Line
+	9600 2400 10550 2400
+Text HLabel 1650 1150 0    60   Input ~ 0
+R_Drain
+Wire Wire Line
+	1650 1150 7200 1150
+Wire Wire Line
+	7200 1150 7200 2000
+Wire Wire Line
+	7200 2000 7400 2000
+Wire Wire Line
+	5000 7300 5750 7300
+Wire Wire Line
+	6500 6700 5750 6700
+Connection ~ 5750 6700
 $EndSCHEMATC
