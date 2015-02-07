@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 11
 Title ""
-Date "2 feb 2015"
+Date "4 feb 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -100,7 +100,7 @@ E4 21 16 E2 E7 6A CE 81 C6 3C A5 93 79 AE 29 E1 BF EC 73 A0 85 C5 FE 1D 05 CE 3A
 19 A9 1F B5 EC 68 0C B1 D7 71 C8 85 73 18 F2 6F 31 C2 3D AB B7 DA 9E 11 ED 7D E6 39 F1 E0 73 CE 
 D9 E2 BF C4 18 F7 0C 4B 5E B4 8D 6F 67 A1 70 71 C5 12 A3 BD DD C9 B3 93 77 93 9B 2B F6 BC 6A 4C 
 31 A6 9D A4 5C 5A 6D B5 D5 56 5B 6D B5 D5 02 ED 0F 8F D8 15 DB 22 89 0B B4 00 00 00 00 49 45 4E 
-44 AE 42 60 82 DA $EndBitmap
+44 AE 42 60 82 8F $EndBitmap
 EndData
 $EndBitmap
 $Sheet
@@ -808,7 +808,7 @@ A1 47 3C 7B 93 06 F7 66 73 39 E3 12 48 6D BE A9 49 B6 D2 2B C3 6F 94 A9 5C 30 AF
 DD 6A FC 26 38 DD 69 88 F6 93 A9 46 05 06 99 11 A1 75 DB 4B BF C8 6E E3 F8 6C A7 47 F9 B1 F6 14 
 12 D7 1E 39 D3 97 8B E9 CC 09 7E A4 21 84 7B DE 75 BE 6C 10 1D B1 C0 C8 E6 44 20 98 58 88 D3 4B 
 BF A4 FE AC E7 27 87 F5 F3 E7 B2 6E 04 7A D3 5E FF 1F 0B 1A 44 E2 12 6D EC E1 00 00 00 00 49 45 
-4E 44 AE 42 60 82 75 $EndBitmap
+4E 44 AE 42 60 82 69 $EndBitmap
 EndData
 $EndBitmap
 Text Notes 8150 1950 0    100  ~ 0
@@ -829,20 +829,11 @@ Switch Between Measuring Vin+ and ECv\n
 Wire Wire Line
 	3300 2250 4350 2250
 Wire Wire Line
-	3800 2250 3800 5450
-Wire Wire Line
-	3800 5450 5050 5450
-Connection ~ 3800 2250
-Wire Wire Line
 	6450 2250 6600 2250
 Wire Wire Line
 	6600 2250 6600 3800
 Wire Wire Line
 	6600 3800 4650 3800
-Wire Wire Line
-	4650 3800 4650 5300
-Wire Wire Line
-	4650 5300 5050 5300
 $Sheet
 S 7400 1700 2200 1550
 U 54C7AF06
@@ -879,9 +870,9 @@ Wire Wire Line
 Wire Wire Line
 	5650 4650 5600 4650
 Text Notes 6200 5800 0    100  ~ 0
-S = HIGH, Y1 circuit is connected (measure EC_Vin+)
+S = HIGH, Y1 circuit is connected (measure ECVout)
 Text Notes 6200 6050 0    100  ~ 0
-S = LOW, Y0 circuit is connected (measure EC_DCv)
+S = LOW, Y0 circuit is connected (measure ECVin+)
 $Comp
 L R R2
 U 1 1 54CBB29D
@@ -925,4 +916,13 @@ Wire Wire Line
 Wire Wire Line
 	6500 6700 5750 6700
 Connection ~ 5750 6700
+Wire Wire Line
+	5050 5300 4000 5300
+Wire Wire Line
+	4000 5300 4000 2250
+Connection ~ 4000 2250
+Wire Wire Line
+	4650 3800 4650 5450
+Wire Wire Line
+	4650 5450 5050 5450
 $EndSCHEMATC

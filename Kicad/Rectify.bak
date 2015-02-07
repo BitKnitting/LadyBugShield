@@ -95,8 +95,6 @@ Text Label 4250 3850 2    60   ~ 0
 RVin-
 Text Label 4600 3300 2    60   ~ 0
 R_Vout
-Text GLabel 5700 4350 0    60   Input ~ 0
-VGND
 Text HLabel 2400 3200 0    100  Input ~ 0
 Signal
 Text HLabel 8250 3300 2    100  Output ~ 0
@@ -132,5 +130,7 @@ Connection ~ 6350 3300
 Wire Wire Line
 	6050 3700 6050 4550
 Text GLabel 6350 4100 2    60   Output ~ 0
+GND
+Text GLabel 5700 4350 2    60   Output ~ 0
 GND
 $EndSCHEMATC

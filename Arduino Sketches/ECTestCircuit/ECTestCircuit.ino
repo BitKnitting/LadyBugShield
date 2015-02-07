@@ -16,6 +16,7 @@ void setup(void)
 {
   Serial.begin(9600);
   pinMode(gate_pin,OUTPUT);
+  digitalWrite(gate_pin,HIGH); //just keep draining.....
   pinMode(ain_pin,OUTPUT);
   pinMode(switch_pin,OUTPUT);
 
@@ -123,7 +124,10 @@ int adcReading(unsigned int num_readings)
 }
 void dischargeCapacitor()
 {
+  Serial.println("Start discharging capacitor");
   digitalWrite(gate_pin,HIGH); //Discharge the capacitor
+  delay(90000);
+  Serial.println("End discharging capacitor");
   digitalWrite(gate_pin,LOW);  //Open the short circuit
 }
 void switchTo(const byte waveform)
@@ -144,6 +148,7 @@ int16_t readADC()
 {
   int16_t results = ads1015.readADC_Differential_VGND(0)*LSB_multiplier;
   Serial.println(results);
+  digitalWrite(gate_pin,HIGH); //go back to draining....
   return results;
 }
 const char helpText[] PROGMEM =
