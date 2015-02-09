@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 2/8/2015 3:58:59 AM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 2/9/2015 4:39:41 AM
 
 BeginCmp
 TimeStamp = /547DE474/53E0F48C;
@@ -312,7 +312,7 @@ BeginCmp
 TimeStamp = /547DE5B0/54C7A3D8;
 Reference = U1;
 ValeurCmp = 74LVC1G53;
-IdModule  = so-8;
+IdModule  = LB_TSSOP8;
 EndCmp
 
 BeginCmp
