@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 11
 Title ""
-Date "29 jan 2015"
+Date "8 feb 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -93,8 +93,16 @@ Text GLabel 2450 3050 0    60   Output ~ 0
 Vin
 Text GLabel 2500 2850 0    60   Output ~ 0
 GND
-Text HLabel 6800 3400 2    60   Output ~ 0
-EC_Meas_Switch
+Text HLabel 2850 4150 0    60   Output ~ 0
+MUX_out_pin
+Text HLabel 2850 3750 0    60   Output ~ 0
+FET_pin
 Wire Wire Line
-	5750 3400 6800 3400
+	2850 4150 3550 4150
+Wire Wire Line
+	3550 3950 2850 3950
+Text HLabel 2850 3950 0    60   Output ~ 0
+MUX_enable_pin
+Wire Wire Line
+	2850 3750 3550 3750
 $EndSCHEMATC

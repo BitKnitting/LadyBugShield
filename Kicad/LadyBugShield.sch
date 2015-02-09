@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 11
 Title ""
-Date "29 jan 2015"
+Date "8 feb 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -56,7 +56,9 @@ F3 "SCL" O R 3300 2200 60
 F4 "Pump2" O R 3300 5650 60 
 F5 "Pump1" O R 3300 5450 60 
 F6 "Pump3" O R 3300 5850 60 
-F7 "EC_Meas_Switch" O R 3300 4250 60 
+F7 "MUX_out_pin" O R 3300 4250 60 
+F8 "FET_pin" O R 3300 4450 60 
+F9 "MUX_enable_pin" O R 3300 4050 60 
 $EndSheet
 $Sheet
 S 4050 1650 1900 2100
@@ -84,7 +86,9 @@ F0 "EC" 50
 F1 "EC.sch" 50
 F2 "EC_ProbeIN" I R 9350 3950 60 
 F3 "EC_AIN" O L 6750 3850 60 
-F4 "EC_Meas_Switch" I L 6750 4250 60 
+F4 "MUX_out_pin" I L 6750 4250 60 
+F5 "FET_pin" I L 6750 4450 60 
+F6 "MUX_enable_pin" I L 6750 4050 60 
 $EndSheet
 $Sheet
 S 1350 700  2350 1300
@@ -215,5 +219,9 @@ Wire Wire Line
 Wire Wire Line
 	6300 3550 5950 3550
 Wire Wire Line
+	3300 4050 6750 4050
+Wire Wire Line
 	3300 4250 6750 4250
+Wire Wire Line
+	3300 4450 6750 4450
 $EndSCHEMATC

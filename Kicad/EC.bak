@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 11
 Title ""
-Date "28 jan 2015"
+Date "8 feb 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -100,7 +100,7 @@ E4 21 16 E2 E7 6A CE 81 C6 3C A5 93 79 AE 29 E1 BF EC 73 A0 85 C5 FE 1D 05 CE 3A
 19 A9 1F B5 EC 68 0C B1 D7 71 C8 85 73 18 F2 6F 31 C2 3D AB B7 DA 9E 11 ED 7D E6 39 F1 E0 73 CE 
 D9 E2 BF C4 18 F7 0C 4B 5E B4 8D 6F 67 A1 70 71 C5 12 A3 BD DD C9 B3 93 77 93 9B 2B F6 BC 6A 4C 
 31 A6 9D A4 5C 5A 6D B5 D5 56 5B 6D B5 D5 02 ED 0F 8F D8 15 DB 22 89 0B B4 00 00 00 00 49 45 4E 
-44 AE 42 60 82 62 $EndBitmap
+44 AE 42 60 82 E7 $EndBitmap
 EndData
 $EndBitmap
 $Sheet
@@ -115,7 +115,7 @@ $EndSheet
 Text Notes 4650 2050 0    100  ~ 0
 EC Gain Loop\n
 $Bitmap
-Pos 5350 2650
+Pos 5350 2750
 Scale 1.000000
 Data
 89 50 4E 47 0D 0A 1A 0A 00 00 00 0D 49 48 44 52 00 00 01 6D 00 00 01 1D 08 02 00 00 00 48 41 A1 
@@ -808,47 +808,34 @@ A1 47 3C 7B 93 06 F7 66 73 39 E3 12 48 6D BE A9 49 B6 D2 2B C3 6F 94 A9 5C 30 AF
 DD 6A FC 26 38 DD 69 88 F6 93 A9 46 05 06 99 11 A1 75 DB 4B BF C8 6E E3 F8 6C A7 47 F9 B1 F6 14 
 12 D7 1E 39 D3 97 8B E9 CC 09 7E A4 21 84 7B DE 75 BE 6C 10 1D B1 C0 C8 E6 44 20 98 58 88 D3 4B 
 BF A4 FE AC E7 27 87 F5 F3 E7 B2 6E 04 7A D3 5E FF 1F 0B 1A 44 E2 12 6D EC E1 00 00 00 00 49 45 
-4E 44 AE 42 60 82 69 $EndBitmap
+4E 44 AE 42 60 82 76 $EndBitmap
 EndData
 $EndBitmap
 Text Notes 8150 1950 0    100  ~ 0
 Rectify\n
 $Comp
-L 74LVC1G53 U?
+L 74LVC1G53 U1
 U 1 1 54C7A3D8
 P 5350 5200
-F 0 "U?" H 5400 5350 60  0000 C CNN
+F 0 "U1" H 5400 5350 60  0000 C CNN
 F 1 "74LVC1G53" H 5950 5350 60  0000 C CNN
 F 2 "~" H 5450 4800 60  0000 C CNN
 F 3 "~" H 5450 4800 60  0000 C CNN
 	1    5350 5200
 	1    0    0    -1  
 $EndComp
-Text Notes 3950 4500 0    100  ~ 0
+Text Notes 6300 5550 0    100  ~ 0
 Switch Between Measuring Vin+ and ECv\n
 Wire Wire Line
 	3300 2250 4350 2250
-Wire Wire Line
-	3800 2250 3800 5450
-Wire Wire Line
-	3800 5450 5050 5450
-Connection ~ 3800 2250
-Wire Wire Line
-	6450 2250 6600 2250
-Wire Wire Line
-	6600 2250 6600 3800
-Wire Wire Line
-	6600 3800 4650 3800
-Wire Wire Line
-	4650 3800 4650 5300
-Wire Wire Line
-	4650 5300 5050 5300
 $Sheet
 S 7400 1700 2200 1550
 U 54C7AF06
 F0 "Rectify" 50
 F1 "Rectify.sch" 50
 F2 "Signal" I L 7400 2250 60 
+F3 "EC_AIN" O R 9600 2400 60 
+F4 "FET_pin" I R 9600 2700 60 
 $EndSheet
 Wire Wire Line
 	6250 5350 7150 5350
@@ -856,33 +843,25 @@ Wire Wire Line
 	7150 5350 7150 2250
 Wire Wire Line
 	7150 2250 7400 2250
-Text GLabel 5000 6800 0    60   Output ~ 0
-VGND
+Text GLabel 4900 7600 0    60   Output ~ 0
+GND
 Wire Wire Line
-	5000 6800 5750 6800
-Wire Wire Line
-	5650 5850 5650 6800
+	5650 5850 5650 7600
 $Comp
-L R R?
+L R R2
 U 1 1 54C7AE26
-P 5750 6200
-F 0 "R?" V 5830 6200 40  0000 C CNN
-F 1 "10K" V 5757 6201 40  0000 C CNN
-F 2 "~" V 5680 6200 30  0000 C CNN
-F 3 "~" H 5750 6200 30  0000 C CNN
-	1    5750 6200
+P 5750 7200
+F 0 "R2" V 5830 7200 40  0000 C CNN
+F 1 "10K" V 5757 7201 40  0000 C CNN
+F 2 "~" V 5680 7200 30  0000 C CNN
+F 3 "~" H 5750 7200 30  0000 C CNN
+	1    5750 7200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5550 6800 5550 5850
-Connection ~ 5550 6800
-Wire Wire Line
-	5750 5950 5750 5850
-Wire Wire Line
-	5750 6800 5750 6450
-Connection ~ 5650 6800
+	5550 5850 5550 7600
 Text HLabel 6500 6500 2    60   Input ~ 0
-EC_Meas_Switch
+MUX_out_pin
 Wire Wire Line
 	5850 5850 5850 6500
 Wire Wire Line
@@ -894,7 +873,51 @@ Wire Wire Line
 Wire Wire Line
 	5650 4650 5600 4650
 Text Notes 6200 5800 0    100  ~ 0
-S = HIGH, Y1 circuit is connected (measure EC_Vin+)
+S = LOW, Y0 circuit is connected (measure EC_Vin+)
 Text Notes 6200 6050 0    100  ~ 0
-S = LOW, Y0 circuit is connected (measure EC_DCv)
+S = HIGH, Y1 circuit is connected (measure EC_DCv)
+Text HLabel 10750 2700 2    60   Input ~ 0
+FET_pin
+Wire Wire Line
+	9600 2700 10750 2700
+Text HLabel 10750 2400 2    60   Output ~ 0
+EC_AIN
+Wire Wire Line
+	9600 2400 10750 2400
+Wire Wire Line
+	3750 2250 3750 5300
+Wire Wire Line
+	3750 5300 5050 5300
+Connection ~ 3750 2250
+Wire Wire Line
+	6450 2250 6700 2250
+Wire Wire Line
+	6700 2250 6700 4200
+Wire Wire Line
+	6700 4200 4750 4200
+Wire Wire Line
+	4750 4200 4750 5450
+Wire Wire Line
+	4750 5450 5050 5450
+Wire Wire Line
+	5750 5850 5750 6950
+Wire Wire Line
+	5750 6650 6500 6650
+Text HLabel 6500 6650 2    60   Input ~ 0
+MUX_enable_pin
+Connection ~ 5750 6650
+Wire Wire Line
+	4900 7600 5750 7600
+Wire Wire Line
+	5750 7600 5750 7450
+Connection ~ 5650 7600
+Connection ~ 5550 7600
+Text HLabel 1400 1100 0    60   Input ~ 0
+EC_ProbeIN
+Wire Wire Line
+	1400 1100 4100 1100
+Wire Wire Line
+	4100 1100 4100 1800
+Wire Wire Line
+	4100 1800 4350 1800
 $EndSCHEMATC
