@@ -6,9 +6,9 @@ Copyright Margaret Johnson 1/2015
 #include <Adafruit_ADS1015.h>
 
 Adafruit_ADS1015 ads1015;
-const byte FET_pin = 8;
-const byte mux_out_pin = 7;
-const byte mux_enable_pin = 6;
+const byte FET_pin = A1;
+const byte mux_out_pin = A3;
+const byte mux_enable_pin = A2;
 const byte LSB_multiplier = 1;// 2x gain   +/- 2.048V  1 bit = 1mV
 Statistic myStats_Vin;  //from http://playground.arduino.cc/Main/Statistics
 Statistic myStats_ECv;
@@ -104,7 +104,12 @@ int readVIn(unsigned int num_readings)
   digitalWrite(mux_enable_pin,LOW);  //enable multiplexer
   switchTo(VIN);
   for (int i=0;i<num_readings;i++) {
-    int results = readADC();
+    int results;
+    do {
+      results = readADC();
+      if (results > 350) Serial.println("Result for Vin+ > 350mV");
+    }
+    while (results > 350);
     myStats_Vin.add(results);
   }
   digitalWrite(mux_enable_pin,HIGH); //disable multiplexer
@@ -152,12 +157,14 @@ void switchTo(const byte waveform)
 void discharge()
 {
   digitalWrite(FET_pin,HIGH);
-  //delay(5000);
+  //  delay(100);
   digitalWrite(FET_pin,LOW);
 }
 int16_t readADC()
 {
-  int16_t results = ads1015.readADC_Differential_VGND(0)*LSB_multiplier;
+  discharge();
+  int16_t results = ads1015.readADC_Differential_VGND(1)*LSB_multiplier;
+  discharge();
   Serial.println(results);
   return results;
 }
@@ -184,6 +191,7 @@ static void showString (PGM_P s) {
     Serial.print(c);
   }
 }
+
 
 
 
