@@ -36,9 +36,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 9 11
+Sheet 9 9
 Title ""
-Date "9 feb 2015"
+Date "17 mar 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -46,39 +46,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L C C12
-U 1 1 53DB8C11
-P 6050 4450
-F 0 "C12" H 6050 4550 40  0000 L CNN
-F 1 "10u" H 6056 4365 40  0000 L CNN
-F 2 "~" H 6088 4300 30  0000 C CNN
-F 3 "~" H 6050 4450 60  0000 C CNN
-	1    6050 4450
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C13
-U 1 1 53DB8C1F
-P 6450 4450
-F 0 "C13" H 6450 4550 40  0000 L CNN
-F 1 ".1u" H 6456 4365 40  0000 L CNN
-F 2 "~" H 6488 4300 30  0000 C CNN
-F 3 "~" H 6450 4450 60  0000 C CNN
-	1    6450 4450
-	1    0    0    -1  
-$EndComp
-$Comp
-L C C11
-U 1 1 53DB8C26
-P 4000 4450
-F 0 "C11" H 4000 4550 40  0000 L CNN
-F 1 "1u" H 4006 4365 40  0000 L CNN
-F 2 "~" H 4038 4300 30  0000 C CNN
-F 3 "~" H 4000 4450 60  0000 C CNN
-	1    4000 4450
-	1    0    0    -1  
-$EndComp
 $Comp
 L LED D3
 U 1 1 540ED65C
@@ -102,24 +69,9 @@ F 3 "~" H 6950 5000 30  0000 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	4850 4450 4850 5400
-Wire Wire Line
 	2100 5400 9200 5400
 Wire Wire Line
-	4000 5400 4000 4650
-Wire Wire Line
-	6050 4000 6050 4250
-Wire Wire Line
-	2100 4000 4250 4000
-Wire Wire Line
-	4000 4250 4000 4000
-Connection ~ 4000 4000
-Wire Wire Line
-	5500 4000 9300 4000
-Wire Wire Line
-	6450 4000 6450 4250
-Connection ~ 6050 4000
-Connection ~ 6450 4000
+	2100 4000 9300 4000
 Wire Wire Line
 	6950 4600 6950 4750
 Wire Wire Line
@@ -208,17 +160,9 @@ Wire Wire Line
 	3300 1600 3300 1700
 Text Label 3200 2000 0    60   ~ 0
 VGND_V+
-Connection ~ 4000 5400
 Wire Wire Line
 	6950 5250 6950 5400
 Connection ~ 6950 5400
-Wire Wire Line
-	6450 4650 6450 5400
-Connection ~ 6450 5400
-Wire Wire Line
-	6050 4650 6050 5400
-Connection ~ 6050 5400
-Connection ~ 4850 5400
 Text GLabel 2100 5400 0    60   Input ~ 0
 GND
 Text GLabel 9200 5400 2    60   Output ~ 0
@@ -232,7 +176,7 @@ GND
 Text GLabel 3300 1700 0    60   Input ~ 0
 GND
 Text GLabel 2100 4000 0    60   Input ~ 0
-Vin
+Vclean
 Text GLabel 9300 4000 2    60   Output ~ 0
 Vclean
 Text GLabel 1550 2100 0    60   Output ~ 0
@@ -273,19 +217,22 @@ F 3 "~" H 2300 1500 60  0000 C CNN
 	1    2300 1500
 	1    0    0    -1  
 $EndComp
-$Comp
-L MC78L05 U3
-U 1 1 549160D4
-P 4850 4200
-F 0 "U3" H 5000 4200 60  0000 C CNN
-F 1 "MC78L05" H 4850 4650 60  0000 C CNN
-F 2 "~" H 4850 4200 60  0000 C CNN
-F 3 "~" H 4850 4200 60  0000 C CNN
-	1    4850 4200
-	1    0    0    -1  
-$EndComp
 Text Label 3400 1200 0    60   ~ 0
 Vclean
 Text Label 2450 1300 0    60   ~ 0
 Vclean
+$Comp
+L CONN_1 VGND_TP1
+U 1 1 5506C7AE
+P 1800 1550
+F 0 "VGND_TP1" H 1880 1550 40  0000 L CNN
+F 1 "CONN_1" H 1800 1605 30  0001 C CNN
+F 2 "" H 1800 1550 60  0000 C CNN
+F 3 "" H 1800 1550 60  0000 C CNN
+	1    1800 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 1550 1650 2100
+Connection ~ 1650 2100
 $EndSCHEMATC

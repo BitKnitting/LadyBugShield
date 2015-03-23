@@ -81,7 +81,7 @@ void takeReadings(){
   while (Serial.available()==0);
   unsigned long readPeriodInMilliseconds = Serial.parseInt();
   if (readPeriodInMilliseconds <= 0)readPeriodInMilliseconds = READ_PERIOD_IN_MS;
-  Serial.print(F("Read for "));
+  Serial.print(F("Read for "));Â
   displayMillisToMinutesAndSeconds(readPeriodInMilliseconds);
   Serial.print(F("\r\nHit any character to continue "));
   while (Serial.available()==0);

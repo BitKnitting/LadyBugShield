@@ -16,10 +16,10 @@ void setup(void)
 {
   Serial.begin(9600);
   pinMode(FET_pin,OUTPUT);
+  digitalWrite(FET_pin,LOW); //start with FET as open circuit
   pinMode(mux_out_pin,OUTPUT);
   pinMode(mux_enable_pin,OUTPUT); 
-  digitalWrite(FET_pin,LOW); //start with FET as open circuit
-  digitalWrite(mux_enable_pin,HIGH); //disable multiplexer
+  digitalWrite(mux_enable_pin,LOW); //This is always true right now in testing.  Disabled pull up.
 
   ads1015.begin();
   //Vpp a bit over 2V
@@ -100,46 +100,55 @@ void readECVout()
 }
 int readVIn(unsigned int num_readings)
 {
-  digitalWrite(FET_pin,LOW); //stop draining
-  digitalWrite(mux_enable_pin,LOW);  //enable multiplexer
+
   switchTo(VIN);
+  Serial.println("-->settle ADC reading...");
+  for (int j = 0;j<5;j++) {
+    discharge();
+    for (int i=0;i<100;i++) {
+      readADC();
+    }
+  }
+  for (int i=0;i<2000;i++) {
+    readADC();
+  }
+  Serial.println("-->Start reading ADC...");  
   for (int i=0;i<num_readings;i++) {
     int results;
-    do {
-      results = readADC();
-      if (results > 350) Serial.println("Result for Vin+ > 350mV");
-    }
-    while (results > 350);
+    //    discharge();
+    results = readADC();
+    //    if (i >= 200) {
+    //    do {
+    //      results = readADC();
+    //      if (results > 350) Serial.println("Result for Vin+ > 350mV");
+    //    }
+    //    while (results > 350);
     myStats_Vin.add(results);
+    //    }
   }
-  digitalWrite(mux_enable_pin,HIGH); //disable multiplexer
-  //  digitalWrite(FET_pin,HIGH);  //start draining
+  discharge();
   return myStats_Vin.average();
 }
 int readECv(unsigned int num_readings)
 {
-  digitalWrite(FET_pin,LOW);  //stop draining
-  digitalWrite(mux_enable_pin,LOW); //enable multiplexer
   switchTo(ECV);
+  Serial.println("-->settle ADC reading...");
+  for (int j = 0;j<5;j++) {
+    discharge();
+    for (int i=0;i<100;i++) {
+      readADC();
+    }
+  }
+  for (int i=0;i<2000;i++) {
+    readADC();
+  }
+  Serial.println("-->Start reading ADC...");  
   for (int i=0;i<num_readings;i++) {
     int results = readADC();
     myStats_ECv.add(results);
   }
-  digitalWrite(mux_enable_pin,HIGH); //disable multiplexer
-  //  digitalWrite(FET_pin,HIGH);  //start draining
   return myStats_ECv.average();
 }
-int adcReading(unsigned int num_readings)
-{
-  discharge(); //discharge capacitor before taking readings
-  for (int i=0;i<num_readings;i++) {
-    int results = readADC();
-    discharge(); //discharge after a reading
-    myStats_Vin.add(results);
-  }
-  return myStats_Vin.average();
-}
-
 void switchTo(const byte waveform)
 {
   Serial.println("Switch");
@@ -157,14 +166,11 @@ void switchTo(const byte waveform)
 void discharge()
 {
   digitalWrite(FET_pin,HIGH);
-  //  delay(100);
   digitalWrite(FET_pin,LOW);
 }
 int16_t readADC()
 {
-  discharge();
   int16_t results = ads1015.readADC_Differential_VGND(1)*LSB_multiplier;
-  discharge();
   Serial.println(results);
   return results;
 }
@@ -191,6 +197,14 @@ static void showString (PGM_P s) {
     Serial.print(c);
   }
 }
+
+
+
+
+
+
+
+
 
 
 

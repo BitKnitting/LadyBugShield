@@ -36,9 +36,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 11
+Sheet 3 9
 Title ""
-Date "9 feb 2015"
+Date "17 mar 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -134,8 +134,6 @@ Wire Wire Line
 Wire Wire Line
 	5250 3300 6000 3300
 Wire Wire Line
-	5250 3450 6000 3450
-Wire Wire Line
 	5250 3600 6000 3600
 Wire Wire Line
 	5700 2100 5700 2300
@@ -152,6 +150,4 @@ Wire Wire Line
 	5700 2800 5800 2800
 Text GLabel 2400 2100 0    60   Input ~ 0
 Vclean
-Text HLabel 6000 3450 2    60   Input ~ 0
-Therm_AIN
 $EndSCHEMATC

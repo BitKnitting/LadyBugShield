@@ -1,11 +1,8 @@
-update=12/26/2014 6:19:37 AM
+update=3/18/2015 4:31:51 AM
 version=1
 last_client=pcbnew
-[cvpcb]
+[general]
 version=1
-NetIExt=net
-[cvpcb/libraries]
-EquName1=devcms
 [eeschema]
 version=1
 LibDir=
@@ -47,16 +44,19 @@ LibName29=contrib
 LibName30=valves
 LibName31=BenchBuddy
 LibName32=LettuceBuddy
-[general]
+[cvpcb]
 version=1
+NetIExt=net
+[cvpcb/libraries]
+EquName1=devcms
 [pcbnew]
 version=1
-LastNetListRead=
+LastNetListRead=LadyBugShield.net
 UseCmpFile=1
-PadDrill=0.970000000000
-PadDrillOvalY=0.970000000000
-PadSizeH=1.500000000000
-PadSizeV=1.500000000000
+PadDrill=0.000000000000
+PadDrillOvalY=0.000000000000
+PadSizeH=0.419100000000
+PadSizeV=1.470660000000
 PcbTextSizeV=1.500000000000
 PcbTextSizeH=1.500000000000
 PcbTextThickness=0.300000000000
@@ -86,8 +86,9 @@ LibName13=led
 LibName14=dip_sockets
 LibName15=pga_sockets
 LibName16=valves
-LibName17=LettuceBuddy
-LibName18=oshw-logo-kicad-copper-10mm
-LibName19=OSHW-100px-Front-CU
-LibName20=OSHW-100px-Front-SM
-LibName21=LadybugLogoV1
+LibName17=oshw-logo-kicad-copper-10mm
+LibName18=OSHW-100px-Front-CU
+LibName19=OSHW-100px-Front-SM
+LibName20=LadybugLogoV1
+LibName21=BenchBudEE
+LibName22=LettuceBuddy

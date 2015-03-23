@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 2/9/2015 12:22:38 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 3/18/2015 4:58:15 AM
 
 BeginCmp
 TimeStamp = /547DE474/53E0F48C;
@@ -71,41 +71,6 @@ IdModule  = SM0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE6F9/53DB8C26;
-Reference = C11;
-ValeurCmp = 1u;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6F9/53DB8C11;
-Reference = C12;
-ValeurCmp = 10u;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6F9/53DB8C1F;
-Reference = C13;
-ValeurCmp = .1u;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6BF/53CBD4B8;
-Reference = D1;
-ValeurCmp = 4004;
-IdModule  = SOD-123;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6BF/54803657;
-Reference = D2;
-ValeurCmp = 4004;
-IdModule  = SOD-123;
-EndCmp
-
-BeginCmp
 TimeStamp = /547DE6F9/540ED65C;
 Reference = D3;
 ValeurCmp = LED;
@@ -116,13 +81,6 @@ BeginCmp
 TimeStamp = /547DE5B0/54C79A3D/54C79AD0;
 Reference = D4;
 ValeurCmp = DIODE;
-IdModule  = SOD-123;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6BF/540E4757;
-Reference = D5;
-ValeurCmp = 4004;
 IdModule  = SOD-123;
 EndCmp
 
@@ -141,17 +99,17 @@ IdModule  = SOD-123;
 EndCmp
 
 BeginCmp
-TimeStamp = /54903E48;
-Reference = P1;
-ValeurCmp = CONN_6;
-IdModule  = LB_CONN_6;
+TimeStamp = /5506C6CE;
+Reference = ECAIN_TP1;
+ValeurCmp = CONN_1;
+IdModule  = LB_TestPoint;
 EndCmp
 
 BeginCmp
-TimeStamp = /54903E39;
-Reference = P2;
-ValeurCmp = CONN_2;
-IdModule  = LB_CONN_2;
+TimeStamp = /550579A6;
+Reference = P1;
+ValeurCmp = CONN_6;
+IdModule  = LB_CONN_6;
 EndCmp
 
 BeginCmp
@@ -169,24 +127,10 @@ IdModule  = LB_BNC;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE6BF/53CBD30E;
-Reference = Q1;
-ValeurCmp = TIP122;
-IdModule  = DPAK2;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6BF/53EA6E0F;
-Reference = Q2;
-ValeurCmp = TIP122;
-IdModule  = DPAK2;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6BF/54803643;
-Reference = Q3;
-ValeurCmp = TIP122;
-IdModule  = DPAK2;
+TimeStamp = /5506C613;
+Reference = pHAIN_TP1;
+ValeurCmp = CONN_1;
+IdModule  = LB_TestPoint;
 EndCmp
 
 BeginCmp
@@ -194,20 +138,6 @@ TimeStamp = /547DE5B0/54C7AF06/54C8E8C1;
 Reference = Q4;
 ValeurCmp = MOSFET_N;
 IdModule  = LB_MOSFET;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6BF/53CBD483;
-Reference = R1;
-ValeurCmp = 2.2K;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE5B0/54C7AE26;
-Reference = R2;
-ValeurCmp = 10K;
-IdModule  = SM0805;
 EndCmp
 
 BeginCmp
@@ -260,20 +190,6 @@ IdModule  = SM0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE6BF/54803649;
-Reference = R10;
-ValeurCmp = 2.2K;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6BF/53EA6E15;
-Reference = R11;
-ValeurCmp = 2.2K;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
 TimeStamp = /547DE5B0/54C79A3D/54C79B28;
 Reference = R12;
 ValeurCmp = 22K;
@@ -295,13 +211,6 @@ IdModule  = SM0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE6A0/540DEB6D;
-Reference = R15;
-ValeurCmp = 10K 1%;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
 TimeStamp = /547DE5B0/54C79A3D/54C79B2E;
 Reference = R16;
 ValeurCmp = 10K;
@@ -313,6 +222,13 @@ TimeStamp = /547DE5B0/54C7A446/54C7A5A6;
 Reference = R17;
 ValeurCmp = 1K .5%;
 IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DE5B0/5506C19D;
+Reference = S_TP1;
+ValeurCmp = CONN_1;
+IdModule  = LB_TestPoint;
 EndCmp
 
 BeginCmp
@@ -330,17 +246,10 @@ IdModule  = so-8;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE6F9/549160D4;
-Reference = U3;
-ValeurCmp = MC78L05;
-IdModule  = LB_SOT89_3;
-EndCmp
-
-BeginCmp
 TimeStamp = /547DE4F5/54804BC7;
 Reference = U4;
 ValeurCmp = ADS1015;
-IdModule  = msoic-10;
+IdModule  = LB_msoic-10;
 EndCmp
 
 BeginCmp
@@ -348,6 +257,27 @@ TimeStamp = /547DE5B0/54C79A3D/54C79AFF;
 Reference = U5;
 ValeurCmp = MCP6244;
 IdModule  = LB_MCP6244;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DE6F9/5506C7AE;
+Reference = VGND_TP1;
+ValeurCmp = CONN_1;
+IdModule  = LB_TestPoint;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DE5B0/5506C0E1;
+Reference = VIN_TP1;
+ValeurCmp = CONN_1;
+IdModule  = LB_TestPoint;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DE5B0/5506C129;
+Reference = VOUT_TP1;
+ValeurCmp = CONN_1;
+IdModule  = LB_TestPoint;
 EndCmp
 
 EndListe
