@@ -1,10 +1,10 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 2/9/2015 12:22:38 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 3/26/2015 3:58:49 AM
 
 BeginCmp
 TimeStamp = /547DE474/53E0F48C;
 Reference = ARD1;
 ValeurCmp = ARDUINOPINS;
-IdModule  = ArduinoLettuceBuddy;
+IdModule  = LB_CONN_2;
 EndCmp
 
 BeginCmp
@@ -71,27 +71,6 @@ IdModule  = SM0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE6F9/53DB8C26;
-Reference = C11;
-ValeurCmp = 1u;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6F9/53DB8C11;
-Reference = C12;
-ValeurCmp = 10u;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6F9/53DB8C1F;
-Reference = C13;
-ValeurCmp = .1u;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
 TimeStamp = /547DE6BF/53CBD4B8;
 Reference = D1;
 ValeurCmp = 4004;
@@ -141,6 +120,13 @@ IdModule  = SOD-123;
 EndCmp
 
 BeginCmp
+TimeStamp = /547DE474/551317CB;
+Reference = D8;
+ValeurCmp = LED;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
 TimeStamp = /54903E48;
 Reference = P1;
 ValeurCmp = CONN_6;
@@ -148,7 +134,7 @@ IdModule  = LB_CONN_6;
 EndCmp
 
 BeginCmp
-TimeStamp = /54903E39;
+TimeStamp = /547DE474/5512F566;
 Reference = P2;
 ValeurCmp = CONN_2;
 IdModule  = LB_CONN_2;
@@ -166,6 +152,13 @@ TimeStamp = /54903E31;
 Reference = P4;
 ValeurCmp = BNC;
 IdModule  = LB_BNC;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DE474/5512F560;
+Reference = P5;
+ValeurCmp = CONN_2;
+IdModule  = LB_CONN_2;
 EndCmp
 
 BeginCmp
@@ -204,9 +197,9 @@ IdModule  = SM0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE5B0/54C7AE26;
+TimeStamp = /547DE474/551317D1;
 Reference = R2;
-ValeurCmp = 10K;
+ValeurCmp = 1K;
 IdModule  = SM0805;
 EndCmp
 
@@ -295,13 +288,6 @@ IdModule  = SM0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE6A0/540DEB6D;
-Reference = R15;
-ValeurCmp = 10K 1%;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
 TimeStamp = /547DE5B0/54C79A3D/54C79B2E;
 Reference = R16;
 ValeurCmp = 10K;
@@ -313,6 +299,34 @@ TimeStamp = /547DE5B0/54C7A446/54C7A5A6;
 Reference = R17;
 ValeurCmp = 1K .5%;
 IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DE5B0/5513DDA8;
+Reference = TP1;
+ValeurCmp = Vin;
+IdModule  = LB_TestPoint;
+EndCmp
+
+BeginCmp
+TimeStamp = /5513E844;
+Reference = TP2;
+ValeurCmp = pH_AIN;
+IdModule  = LB_TestPoint;
+EndCmp
+
+BeginCmp
+TimeStamp = /5513E851;
+Reference = TP3;
+ValeurCmp = EC_AIN;
+IdModule  = LB_TestPoint;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DE5B0/5513DE76;
+Reference = TP4;
+ValeurCmp = Vout;
+IdModule  = LB_TestPoint;
 EndCmp
 
 BeginCmp
@@ -330,13 +344,6 @@ IdModule  = so-8;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE6F9/549160D4;
-Reference = U3;
-ValeurCmp = MC78L05;
-IdModule  = LB_SOT89_3;
-EndCmp
-
-BeginCmp
 TimeStamp = /547DE4F5/54804BC7;
 Reference = U4;
 ValeurCmp = ADS1015;
@@ -348,6 +355,20 @@ TimeStamp = /547DE5B0/54C79A3D/54C79AFF;
 Reference = U5;
 ValeurCmp = MCP6244;
 IdModule  = LB_MCP6244;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DE6F9/5506C7AE;
+Reference = VGND_TP1;
+ValeurCmp = CONN_1;
+IdModule  = LB_TestPoint;
+EndCmp
+
+BeginCmp
+TimeStamp = /547DE5B0/5513DEEA;
+Reference = VP1;
+ValeurCmp = S;
+IdModule  = LB_TestPoint;
 EndCmp
 
 EndListe

@@ -36,9 +36,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 11
+Sheet 6 10
 Title ""
-Date "9 feb 2015"
+Date "26 mar 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -278,5 +278,5 @@ VGND
 Text GLabel 4350 4000 2    60   Input ~ 0
 VGND
 Text HLabel 8400 3850 2    60   Output ~ 0
-EC_Vin+
+EC_Vin
 $EndSCHEMATC
