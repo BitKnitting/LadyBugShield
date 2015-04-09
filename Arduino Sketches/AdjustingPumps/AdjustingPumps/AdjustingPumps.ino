@@ -1,6 +1,10 @@
 /*************************************************************************************/
 //pHDown.ino
 //adjust the pH of a nutrient bath down
+//Copyright Margaret Johnson  3/2015
+//thanks to:
+//  SparkysWidgets for the open source minipH Arduino sketch: https://github.com/SparkysWidgets/MinipHBFW
+//  Adafruit for the ADS1015 BOB, tutorial and library: https://learn.adafruit.com/adafruit-4-channel-adc-breakouts
 /*************************************************************************************/
 #define DEBUG 1
 #ifdef DEBUG
@@ -31,12 +35,12 @@ struct parameters_T
   unsigned int WriteCheck;
   int16_t pH7Cal, pH4Cal;
   float pHStep;
-  float pHDOWN;
+  float pHDOWN;          //the pH DOWN is in a container that will be used until empty.  So save the pH DOWN value across readings.
 }
 params;
 #define pH_DOWN_pin  7
 float pH_nutrients=0.,pH_DOWN=0.,pH_set_point=0.;
-uint8_t num_seconds_to_pump=0;
+float mS_to_pump=0.;
 void setup()
 {
   Serial.begin(9600);
@@ -84,7 +88,7 @@ void serialHandler() {
     case 'p':
     case 'P': 
       {
-        takeReadings();
+        takeReadings(READ_PERIOD_IN_MS);
         pH_nutrients = calcpH();
         DEBUG_PRINTF("pHmV: ");
         DEBUG_PRINT(myStats.average());
@@ -100,10 +104,13 @@ void serialHandler() {
     case 'd': 
     case 'D':
       {
-        takeReadings();
+        takeReadings(READ_PERIOD_IN_MS);
         pH_DOWN = calcpH();
         params.pHDOWN = pH_DOWN;
+        //the pH DOWN is in a container that will be used until empty.  So save the pH DOWN value across readings.
         eeprom_write_block(&params, (void *)0, sizeof(params)); //write these settings back to eeprom
+        DEBUG_PRINTF("--> pH Down saved in EEPROM: ");
+        DEBUG_PRINTLN(params.pHDOWN);
         DEBUG_PRINTF("pHmV: ");
         DEBUG_PRINT(myStats.average());
         DEBUG_PRINTF(" | pH: ");
@@ -139,20 +146,23 @@ void serialHandler() {
           showHelp();
           break;
         }    
-        num_seconds_to_pump = calcPumpTime(pH_nutrients,pH_DOWN,pH_set_point);
-        DEBUG_PRINTF("Number of seconds to pump: ");
-        DEBUG_PRINTLN(num_seconds_to_pump);
+        mS_to_pump = calcPumpTime(pH_nutrients,pH_DOWN,pH_set_point);
+        DEBUG_PRINTF("Number of milliseconds to pump: ");
+        DEBUG_PRINTLN(mS_to_pump);
         showHelp();
         break; 
       }
     case 'u': 
     case 'U':
-      DEBUG_PRINTF("Number of seconds to pump: ");
-      DEBUG_PRINTLN(num_seconds_to_pump);
-      DEBUG_PRINTLNF("Start pumping");
-      pump(num_seconds_to_pump);
-      DEBUG_PRINTLNF("End pumping");
-      showHelp();
+      {
+        DEBUG_PRINTF("Number of milliseconds to pump: ");
+        unsigned long pump_time = (unsigned long)(mS_to_pump+0.5);
+        DEBUG_PRINTLN(pump_time);
+        DEBUG_PRINTLNF("Start pumping");
+        pump(pump_time);
+        DEBUG_PRINTLNF("End pumping");
+        showHelp();
+      }
       break;
     case 'r':
     case 'R':
@@ -166,21 +176,7 @@ void serialHandler() {
     }
   }
 }
-void takeReadings(){
-  Serial.print("\r\nEnter number of millis to take readings (0 = ");
-  Serial.print(READ_PERIOD_IN_MS);
-  Serial.println("ms)");
-  while (Serial.available()==0);
-  unsigned long readPeriodInMilliseconds = Serial.parseInt();
-  if (readPeriodInMilliseconds <= 0)readPeriodInMilliseconds = READ_PERIOD_IN_MS;
-  Serial.print(F("Read for "));
-  displayMillisToMinutesAndSeconds(readPeriodInMilliseconds);
-  Serial.print(F("\r\nHit any character to continue "));
-  while (Serial.available()==0);
-  Serial.read();
-  readValuesToGetAvg(readPeriodInMilliseconds);
-}
-void readValuesToGetAvg(unsigned long pHReadreadPeriodInMilliseconds) {
+void takeReadings(unsigned long pHReadreadPeriodInMilliseconds){
   int16_t adc_result;
   unsigned long currentMillis = millis();
   unsigned long lastpHCalibrationMillis = currentMillis;
@@ -189,7 +185,6 @@ void readValuesToGetAvg(unsigned long pHReadreadPeriodInMilliseconds) {
   {
     //get a pH reading (assumes pH probe is in a calibration solution)
     adc_result = readADC();
-    Serial.println(adc_result);
     myStats.add(adc_result);
     currentMillis = millis();
   }
@@ -201,21 +196,8 @@ int16_t readADC(void){
 }
 float calcpH()
 {
-  Serial.println("---> IN calcpH()");
   float stepsFrom7 = (myStats.average()-params.pH7Cal)/params.pHStep;
   return( 7.-stepsFrom7);
-}
-void displayMillisToMinutesAndSeconds(unsigned long milliseconds) {
-  int seconds = (int) (milliseconds / 1000) % 60 ;
-  int minutes = (int) ((milliseconds / 60000) % 60);
-  Serial.print(milliseconds);
-  Serial.print(F(" milliseconds = "));
-  if (minutes > 0) {
-    Serial.print(minutes);
-    Serial.print(F(" minutes and "));
-  }
-  Serial.print(seconds);
-  Serial.print(F(" seconds "));
 }
 void resetParams(void)
 {
@@ -242,7 +224,7 @@ void readParams(int16_t *pH4Cal, int16_t *pH7Cal,float *pHStep,float *pHDOWN) {
   print_params(*pHStep,*pH4Cal,*pH7Cal,*pHDOWN);
 }
 void print_params(int16_t pH4Cal,int16_t pH7Cal,float pHStep, float pHDOWN)
-  {
+{
   DEBUG_PRINTF("pH Slope: ");
   DEBUG_PRINTLN(pHStep);
   DEBUG_PRINTF("pH 4 Cal: ");
@@ -253,29 +235,44 @@ void print_params(int16_t pH4Cal,int16_t pH7Cal,float pHStep, float pHDOWN)
   DEBUG_PRINTLN(pHDOWN);
 }
 
-uint8_t calcPumpTime(float pH_nutrients,float pH_DOWN,float pH_set_point)
+float calcPumpTime(float pH_nutrients,float pH_DOWN,float pH_set_point)
 {
-  float H_concentration_DOWN = pow(10.0,-pH_DOWN);
+  float H_concentration_for_pumping = pow(10.0,-pH_DOWN);
+   DEBUG_PRINTLN(H_concentration_for_pumping);
+  //pump about 1mL in 1 second
+  float H_concentration_added_in_1_second = H_concentration_for_pumping * 1000.;
+  DEBUG_PRINTF("The amount of concentration that is added in one second of pumping: ");
+  DEBUG_PRINT(H_concentration_added_in_1_second);
+  DEBUG_PRINTLNF("moles/liter");
   float H_concentration_current = pow(10.0,-pH_nutrients);
   float H_concentration_set_point = pow(10.0,-pH_set_point); //should be lower than what nutrients currently is at
-  //assumes pH DOWN only so..
-  float H_concentration_to_add = H_concentration_set_point - H_concentration_current;
+  //subtract where we are from where we want to be. This gives us the amount of hydronium ions we need to add
+  float H_concentration_to_add = H_concentration_set_point - H_concentration_current; //in moles/liter
+  //1 gal = 3.8L
+  //3 gallon bucket
+  //units now in moles/3 gallons
+H_concentration_to_add =  H_concentration_to_add*3.8*3;
+//in mS
+ float pump_time = H_concentration_to_add/H_concentration_added_in_1_second*1000;
+ 
+
+  //
   //calculate amount (mL)  of pH DOWN (given measured concentration) to pump into nutrient bath
   //Assume 3 gallon bath
   // *3 to go from 1 L to 3 L
   // *3.8 to go from Liters to Gallons
   // * 1000 to go from liters to mLs
-  H_concentration_to_add = 3.8*3.*1000.*H_concentration_to_add/H_concentration_DOWN;
-  if (H_concentration_to_add > 0.) 
-  {// 4 seconds pump time (assuming no air)   ~= 1mL...so 2 seconds = .5 mL...get a little less
-    unsigned char pump_time = floor(H_concentration_to_add/.5+.5);
-    return (pump_time);
-  }
+  // * 1000 to go from seconds to mS
+//  float pump_time = 3.8*3.*1000.*(H_concentration_to_add/H_concentration_DOWN)*1000;
+  return (pump_time);
 }
-void pump(uint8_t num_seconds)
+void pump(unsigned long pump_time)
 {
   digitalWrite(pH_DOWN_pin, HIGH);
-  delay(num_seconds*1000);
+  DEBUG_PRINTF("Pumping for ");
+  DEBUG_PRINT(pump_time);
+  DEBUG_PRINTLNF("mS");
+  delay(pump_time);
   digitalWrite(pH_DOWN_pin, LOW);
 }
 const char helpText[] PROGMEM =
@@ -305,6 +302,8 @@ static void showString (PGM_P s) {
     Serial.print(c);
   }
 }
+
+
 
 
 
