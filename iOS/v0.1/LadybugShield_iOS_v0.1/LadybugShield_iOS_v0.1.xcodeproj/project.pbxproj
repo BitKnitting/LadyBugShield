@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		F01EE7E11AD7164500A6EAF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01EE7E01AD7164500A6EAF0 /* AppDelegate.swift */; };
-		F01EE7E31AD7164500A6EAF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01EE7E21AD7164500A6EAF0 /* ViewController.swift */; };
 		F01EE7E61AD7164500A6EAF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F01EE7E41AD7164500A6EAF0 /* Main.storyboard */; };
 		F01EE7E81AD7164500A6EAF0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F01EE7E71AD7164500A6EAF0 /* Images.xcassets */; };
 		F01EE7EB1AD7164500A6EAF0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F01EE7E91AD7164500A6EAF0 /* LaunchScreen.xib */; };
 		F01EE7F71AD7164500A6EAF0 /* LadybugShield_iOS_v0_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01EE7F61AD7164500A6EAF0 /* LadybugShield_iOS_v0_1Tests.swift */; };
+		F04B8A1C1AD825A10016CED6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B8A1B1AD825A10016CED6 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		F01EE7DB1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LadybugShield_iOS_v0.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01EE7DF1AD7164500A6EAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F01EE7E01AD7164500A6EAF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F01EE7E21AD7164500A6EAF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F01EE7E51AD7164500A6EAF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F01EE7E71AD7164500A6EAF0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F01EE7EA1AD7164500A6EAF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F01EE7F01AD7164500A6EAF0 /* LadybugShield_iOS_v0.1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LadybugShield_iOS_v0.1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01EE7F51AD7164500A6EAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F01EE7F61AD7164500A6EAF0 /* LadybugShield_iOS_v0_1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadybugShield_iOS_v0_1Tests.swift; sourceTree = "<group>"; };
+		F04B8A1B1AD825A10016CED6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +77,8 @@
 		F01EE7DD1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1 */ = {
 			isa = PBXGroup;
 			children = (
+				F04B8A1B1AD825A10016CED6 /* HomeViewController.swift */,
 				F01EE7E01AD7164500A6EAF0 /* AppDelegate.swift */,
-				F01EE7E21AD7164500A6EAF0 /* ViewController.swift */,
 				F01EE7E41AD7164500A6EAF0 /* Main.storyboard */,
 				F01EE7E71AD7164500A6EAF0 /* Images.xcassets */,
 				F01EE7E91AD7164500A6EAF0 /* LaunchScreen.xib */,
@@ -212,8 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F01EE7E31AD7164500A6EAF0 /* ViewController.swift in Sources */,
 				F01EE7E11AD7164500A6EAF0 /* AppDelegate.swift in Sources */,
+				F04B8A1C1AD825A10016CED6 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +405,7 @@
 				F01EE7FC1AD7164500A6EAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F01EE7FD1AD7164500A6EAF0 /* Build configuration list for PBXNativeTarget "LadybugShield_iOS_v0.1Tests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +414,7 @@
 				F01EE7FF1AD7164500A6EAF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

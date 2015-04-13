@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 9 10
 Title ""
-Date "26 mar 2015"
+Date "13 apr 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -46,37 +46,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L LED D3
-U 1 1 540ED65C
-P 6950 4400
-F 0 "D3" H 6950 4500 50  0000 C CNN
-F 1 "LED" H 6950 4300 50  0000 C CNN
-F 2 "~" H 6950 4400 60  0000 C CNN
-F 3 "~" H 6950 4400 60  0000 C CNN
-	1    6950 4400
-	0    1    1    0   
-$EndComp
-$Comp
-L R R5
-U 1 1 540EDC27
-P 6950 5000
-F 0 "R5" V 7030 5000 40  0000 C CNN
-F 1 "1K" V 6957 5001 40  0000 C CNN
-F 2 "~" V 6880 5000 30  0000 C CNN
-F 3 "~" H 6950 5000 30  0000 C CNN
-	1    6950 5000
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2100 5400 9200 5400
-Wire Wire Line
-	2100 4000 9300 4000
-Wire Wire Line
-	6950 4600 6950 4750
-Wire Wire Line
-	6950 4200 6950 4000
-Connection ~ 6950 4000
 $Comp
 L R R8
 U 1 1 547DEB21
@@ -160,13 +129,6 @@ Wire Wire Line
 	3300 1600 3300 1700
 Text Label 3200 2000 0    60   ~ 0
 VGND_V+
-Wire Wire Line
-	6950 5250 6950 5400
-Connection ~ 6950 5400
-Text GLabel 2100 5400 0    60   Input ~ 0
-GND
-Text GLabel 9200 5400 2    60   Output ~ 0
-GND
 Text GLabel 2600 2600 0    60   Input ~ 0
 GND
 Text GLabel 2300 1800 0    60   Input ~ 0
@@ -175,22 +137,8 @@ Text GLabel 3550 2900 0    60   Input ~ 0
 GND
 Text GLabel 3300 1700 0    60   Input ~ 0
 GND
-Text GLabel 2100 4000 0    60   Input ~ 0
-Vclean
-Text GLabel 9300 4000 2    60   Output ~ 0
-Vclean
 Text GLabel 1550 2100 0    60   Output ~ 0
 VGND
-Wire Notes Line
-	1750 3450 9950 3450
-Wire Notes Line
-	9950 3450 9900 5700
-Wire Notes Line
-	9900 5700 1750 5700
-Wire Notes Line
-	1750 5700 1750 3450
-Text Notes 5450 3600 0    100  ~ 0
-Provide clean V+ to circuit
 $Comp
 L MCP6242 U2
 U 1 1 54906C62

@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 8 10
 Title ""
-Date "26 mar 2015"
+Date "13 apr 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -131,17 +131,6 @@ Wire Wire Line
 	5350 3850 3700 3850
 Connection ~ 5350 3300
 Connection ~ 5700 3300
-$Comp
-L MOSFET_N Q4
-U 1 1 54C8E8C1
-P 6250 3700
-F 0 "Q4" H 6260 3870 60  0000 R CNN
-F 1 "MOSFET_N" H 6260 3550 60  0000 R CNN
-F 2 "~" H 6250 3700 60  0000 C CNN
-F 3 "~" H 6250 3700 60  0000 C CNN
-	1    6250 3700
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6350 3500 6350 3300
 Connection ~ 6350 3300
@@ -156,4 +145,15 @@ Wire Wire Line
 	6050 4550 2450 4550
 Text HLabel 2450 4550 0    100  Input ~ 0
 FET_pin
+$Comp
+L LB_MOSFET_N Q4
+U 1 1 552BD149
+P 6250 3700
+F 0 "Q4" H 6260 3870 60  0000 R CNN
+F 1 "LB_MOSFET_N" H 6260 3550 60  0000 R CNN
+F 2 "~" H 6250 3700 60  0000 C CNN
+F 3 "~" H 6250 3700 60  0000 C CNN
+	1    6250 3700
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
