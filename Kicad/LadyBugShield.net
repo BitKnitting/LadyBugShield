@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source "//psf/Home/Documents/Lettuce Buddy HW/LadyBug Hydro/Laydybug Shield/Kicad/LadyBugShield.sch")
-    (date "4/13/2015 7:11:58 AM")
+    (date "4/13/2015 12:35:40 PM")
     (tool "eeschema (2013-07-07 BZR 4022)-stable"))
   (components
     (comp (ref P3)
@@ -424,6 +424,17 @@
         (pin (num 8) (name V+) (type input))
         (pin (num 9) (name SDA) (type BiDi))
         (pin (num 10) (name SCL) (type input))))
+    (libpart (lib LettuceBuddy) (part LB_MOSFET_N)
+      (docs transistors/mos/*.*)
+      (fields
+        (field (name Reference) Q)
+        (field (name Value) LB_MOSFET_N)
+        (field (name Footprint) ~)
+        (field (name Datasheet) ~))
+      (pins
+        (pin (num D) (name D) (type passive))
+        (pin (num G) (name G) (type input))
+        (pin (num S) (name S) (type passive))))
     (libpart (lib LettuceBuddy) (part MCP6242)
       (fields
         (field (name Reference) U)
@@ -459,18 +470,7 @@
         (pin (num 11) (name V-) (type BiDi))
         (pin (num 12) (name +) (type input))
         (pin (num 13) (name -) (type input))
-        (pin (num 14) (name ~) (type output))))
-    (libpart (lib LettuceBuddy) (part LB_MOSFET_N)
-      (docs transistors/mos/*.*)
-      (fields
-        (field (name Reference) Q)
-        (field (name Value) LB_MOSFET_N)
-        (field (name Footprint) ~)
-        (field (name Datasheet) ~))
-      (pins
-        (pin (num D) (name D) (type passive))
-        (pin (num G) (name G) (type input))
-        (pin (num S) (name S) (type passive)))))
+        (pin (num 14) (name ~) (type output)))))
   (libraries
     (library (logical device)
       (uri "C:\\Program Files (x86)\\KiCad\\share\\library\\device.lib"))

@@ -88,7 +88,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "//psf/Home/Documents/Lettuce Buddy HW/LadyBug Hydro/Laydybug Shield/Kicad/Gerbers/Beta2/"))
+      (outputdirectory "//psf/Home/Documents/Lettuce Buddy HW/LadyBug Hydro/Laydybug Shield/Kicad/Gerbers/Beta3/"))
   )
 
   (net 0 "")
@@ -2151,7 +2151,7 @@
   (gr_text bitknitting.wordpress.com (at 189.2211 83.70932) (layer B.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify mirror))
   )
-  (gr_text "Beta 2" (at 194.30238 81.01584) (layer B.SilkS)
+  (gr_text "Beta 3" (at 194.30238 81.01584) (layer B.SilkS)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify mirror))
   )
   (gr_line (start 157.6324 118.7704) (end 223.6724 118.7704) (angle 90) (layer Edge.Cuts) (width 0.1))
