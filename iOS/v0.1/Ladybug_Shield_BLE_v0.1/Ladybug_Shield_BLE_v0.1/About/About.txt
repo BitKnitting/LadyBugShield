@@ -1,0 +1,18 @@
+ 	
+	embedXcode
+	embedXcode+
+	----------------------------------
+	Embedded Computing on Xcode
+	
+	
+	© Rei VILO, 2010-2015
+	All rights reserved	
+	http://embedXcode.weebly.com/
+	
+	
+embedXcode  • Apr 12, 2015 release 279 • Added Arduino Zero Pro, chipKIT DP32 and WiFire
+embedXcode+ • Apr 12, 2015 release 279 • Added Arduino Zero Pro, chipKIT DP32 and WiFire
+embedXcode Tools • Apr 01, 2015 release 274 • Support for updated Spark Core
+
+	
+	
