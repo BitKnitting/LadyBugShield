@@ -8,6 +8,8 @@
 
 import Foundation
 import CoreBluetooth
+import CoreData
+import UIKit
 protocol BTServiceDelegate:class {
     func BLEDidUpdateReadings(pH_curent_string:String,pH_set_point_string:String,EC_current_string:String, EC_set_point_string:String,plant_type_byte:Int, plant_stage_byte:Int)
 }
@@ -110,10 +112,10 @@ class BTService: NSObject,CBPeripheralDelegate{
     //a reading came in from the Ladybug Shield...Current all data is bundled
     //into one reading
     func update(ladybug_shield_data:NSData){
-        //check to make sure all the bytes came over..currently there are 11
-        if (ladybug_shield_data.length != 11){
+        //check to make sure all the bytes came over..currently there are 13
+        if (ladybug_shield_data.length != 13){
             //TBD: notify caller or bcast or add as error...
-            println("expected a data length of 9.  Received \(ladybug_shield_data.length) bytes")
+            println("expected a data length of 13.  Received \(ladybug_shield_data.length) bytes")
             return;
         }
         var buffer = [UInt8](count: ladybug_shield_data.length, repeatedValue: 0x00)
@@ -121,22 +123,46 @@ class BTService: NSObject,CBPeripheralDelegate{
         //the version is the first byte
         let version = buffer[0]
         println("\(ladybug_shield_data.length) bytes of data arrived (pH and EC readings)")
-//the next two bytes are the current value of the pH read by the shield
-        let pH_current_string =  unpack_pH(buffer[1],pH: buffer[2])
-        //after that, two bytes represent the set point for pH
-        let pH_set_point_string = unpack_pH(buffer[3],pH: buffer[4])
+        //the next byte is the current value of the pH read by the shield
+        let pH_current_string =  unpack_pH(buffer[1])
+        //one byte for the set point
+        let pH_set_point_string = unpack_pH(buffer[2])
         //and then two bytes for the current EC value
-        let EC_current_string = unpack_EC(buffer[5],lsb: buffer[6])
+        let EC_current_string = unpack_uint16(buffer[3],lsb: buffer[4])
         //followed by two bytes for the EC Set point
-        let EC_set_point_string = unpack_EC(buffer[7],lsb: buffer[8])
+        let EC_set_point_string = unpack_uint16(buffer[5],lsb: buffer[6])
         //then one byte for the type
-        let plant_type_byte = Int(buffer[9])
+        let plant_type_byte = Int(buffer[7])
         //and another byte for the stage
-        let plant_stage_byte = Int(buffer[10])
+        let plant_stage_byte = Int(buffer[8])
+        //get the amount of ms pH dose pumped since last measurement
+        let pH_pump_time = UInt16(buffer[9]) << 8 | UInt16(buffer[10])
+        //get the amount of ms EC dose pumped since last measurement
+//        let EC_pump_time = unpack_uint16(buffer[11], lsb: buffer[12])
+        let EC_pump_time = UInt16(buffer[11]) << 8 | UInt16(buffer[12])
+        //put a record into the database
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        let entity = NSEntityDescription.entityForName("Measurement",inManagedObjectContext:managedContext)
+        let measurement = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:managedContext)
+        measurement.setValue(pH_set_point_string, forKey: "pH_SetPoint")
+        measurement.setValue(pH_current_string, forKey: "pH_Current")
+        measurement.setValue(EC_set_point_string, forKey: "eC_SetPoint")
+        measurement.setValue(EC_current_string, forKey: "eC_Current")
+        var castAsNSNumber : NSNumber = NSNumber(unsignedShort: pH_pump_time)
+        measurement.setValue(castAsNSNumber, forKey: "pH_pumpTime")
+        castAsNSNumber  = NSNumber(unsignedShort: EC_pump_time)
+        measurement.setValue(castAsNSNumber, forKey: "eC_pumpTime")
+        let date = NSDate()
+        measurement.setValue(date, forKey:"date")
+        //persist
+        var error: NSError?
+        if !(managedContext.save(&error)){
+            println("Whoops, couldn't save.  Error: \(error?.localizedDescription)")
+        }
         if (delegate != nil){
             delegate!.BLEDidUpdateReadings(pH_current_string,pH_set_point_string: pH_set_point_string,EC_current_string:EC_current_string, EC_set_point_string:EC_set_point_string,plant_type_byte:plant_type_byte,plant_stage_byte:plant_stage_byte)
         }
-
     }
     //callback if used the peripheral.setNotifyValue or readValue
     func peripheral(peripheral: CBPeripheral!, didUpdateValueForCharacteristic characteristic: CBCharacteristic!, error: NSError!) {
@@ -154,24 +180,19 @@ class BTService: NSObject,CBPeripheralDelegate{
         }
     }
     //MARK: Helper functions
-    func unpack_pH(neg: UInt8,pH:UInt8) -> String
+    func unpack_pH(pH: UInt8) -> String
     {
-        var pH_string = String(UnicodeScalar(neg))
-        if (pH_string != "-"){
-            pH_string = ""
-        }
         let major = String(pH >> 4)
         let minor = String(pH & 15)
-        let pH_str = pH_string+major+"."+minor
+        let pH_str = major+"."+minor
         return pH_str
     }
-    func unpack_EC(msb:UInt8,lsb:UInt8) -> String
+    func unpack_uint16(msb:UInt8,lsb:UInt8) -> String
     {
         let value = UInt16(msb) << 8 | UInt16(lsb)
         let EC_str = "\(value)"
         return EC_str
     }
-}
 //caller knows if the pH is negative.  Most of the time it won't be since negative pH's are more basic.
 func pack_pH(pH:Double)->UInt8
 {
@@ -194,4 +215,34 @@ func pack_EC(EC_value:UInt16) -> UInt16
     println("--> EC value: \(EC_value)")
     var packed_EC = EC_value.byteSwapped
     return packed_EC
+}
+func start_pumping() {
+    //make sure the peripheral/characteristic is connected (available)
+    if (peripheral.state != .Connected){
+        println("Peripheral is not connected. Did not update set points")
+        return
+    }
+    //tell the shield to start pumping if either the pH or EC is not within the
+    //range of its set point
+    var data = NSMutableData()
+    //COMMAND CODE
+    var uint_8:UInt8 = 98  //command code = 'b'
+    data.appendBytes(&uint_8,length: 1)
+    peripheral.writeValue(data, forCharacteristic: characteristic_send_data, type: CBCharacteristicWriteType.WithoutResponse)
+    }
+    func stop_pumping() {
+        //make sure the peripheral/characteristic is connected (available)
+        if (peripheral.state != .Connected){
+            println("Peripheral is not connected. Did not update set points")
+            return
+        }
+        //tell the shield to start pumping if either the pH or EC is not within the
+        //range of its set point
+        var data = NSMutableData()
+        //COMMAND CODE
+        var uint_8:UInt8 = 99  //command code = 'c'
+        data.appendBytes(&uint_8,length: 1)
+        peripheral.writeValue(data, forCharacteristic: characteristic_send_data, type: CBCharacteristicWriteType.WithoutResponse)
+
+    }
 }

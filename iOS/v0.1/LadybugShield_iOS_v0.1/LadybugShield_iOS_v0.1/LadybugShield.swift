@@ -213,4 +213,10 @@ class LadybugShield:NSObject,BTDiscoveryDelegate,BTServiceDelegate {
         }
         
     }
+    func start_pumping() {
+        btService.start_pumping()
+    }
+    func stop_pumping() {
+        btService.stop_pumping()
+    }
 }

@@ -22,11 +22,20 @@ class HomeViewController: UIViewController,UIPickerViewDelegate,LadybugShieldDel
         case plant_type=0
         case growth_stage=1
     }
-    var ok_to_pump = true
+    //setting pumping == true starts the app with the pumps off.
+    var pumping = false
     @IBOutlet weak var UI_pump_button_object: UIButton!
     @IBAction func UI_pump_button(sender: UIButton) {
-        ok_to_pump = !ok_to_pump
-        UI_pump_button_object.backgroundColor = ok_to_pump ?  UIColor.greenColor() :  UIColor.redColor()
+        pumping = !pumping
+        if (!pumping){
+            ladybug.stop_pumping()
+            UI_pump_button_object.backgroundColor = UIColor.greenColor()
+            UI_pump_button_object.setTitle("Start Pump", forState: UIControlState.Normal)
+        }else {
+            UI_pump_button_object.backgroundColor = UIColor.redColor()
+            UI_pump_button_object.setTitle("Stop Pump", forState: UIControlState.Normal)
+            ladybug.start_pumping()
+        }
     }
     @IBOutlet weak var UI_plant_type: UILabel!
     @IBOutlet weak var UI_name: UILabel!
@@ -34,7 +43,7 @@ class HomeViewController: UIViewController,UIPickerViewDelegate,LadybugShieldDel
     @IBOutlet weak var UI_pH_set_point: UILabel!
     @IBOutlet weak var UI_EC_current: UILabel!
     @IBOutlet weak var UI_EC_set_point: UILabel!
-    @IBOutlet weak var UI_ladybug_image: UIImageView!
+//    @IBOutlet weak var UI_ladybug_image: UIImageView!
     @IBOutlet weak var UI_stage_image: UIImageView!
     
     override func viewDidLoad() {
@@ -48,21 +57,21 @@ class HomeViewController: UIViewController,UIPickerViewDelegate,LadybugShieldDel
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    override func viewDidAppear(animated: Bool) {
-        if (ladybug.isConnected == false) && (UI_ladybug_image != nil){
-            UI_ladybug_image.center.x -= self.view.bounds.width
-            UI_ladybug_image.hidden = false
-            UIView.animateWithDuration(2, delay: 0.0,
-                options: .Repeat | .Autoreverse, animations: {
-                    self.UI_ladybug_image.center.x += self.view.bounds.width
-                }, completion: {if $0 { self.hide_ladybug() } })
-        }
-    }
+//    override func viewDidAppear(animated: Bool) {
+//        if (ladybug.isConnected == false) && (UI_ladybug_image != nil){
+//            UI_ladybug_image.center.x -= self.view.bounds.width
+//            UI_ladybug_image.hidden = false
+//            UIView.animateWithDuration(2, delay: 0.0,
+//                options: .Repeat | .Autoreverse, animations: {
+//                    self.UI_ladybug_image.center.x += self.view.bounds.width
+//                }, completion: {if $0 { self.hide_ladybug() } })
+//        }
+//    }
     override func viewWillAppear(animated: Bool) {
         if ladybug.isConnected == false {
             UI_name.text = ".........."
             UI_plant_type.text = ".........."
-            UI_ladybug_image.image = UIImage(named:"Ladybug")
+//            UI_ladybug_image.image = UIImage(named:"Ladybug")
         } else {
             let set_points = ladybug.get_set_points(type,stage: stage)
             UI_EC_set_point.text = "\(set_points.EC_set_point)"
@@ -75,9 +84,9 @@ class HomeViewController: UIViewController,UIPickerViewDelegate,LadybugShieldDel
         println(name_of_image)
         UI_stage_image.image = UIImage(named:name_of_image)
     }
-    func hide_ladybug() {
-        UI_ladybug_image.hidden = true
-    }
+//    func hide_ladybug() {
+//        UI_ladybug_image.hidden = true
+//    }
     // MARK: LadybugShieldDelegate
     // handle the case where the shield with name "found_shield" was not found within the timeout period passed in earlier
     func ladybugDidNotFindShield(){
@@ -106,9 +115,9 @@ class HomeViewController: UIViewController,UIPickerViewDelegate,LadybugShieldDel
 // TODO: Grower chooses name.  Just using a default right now to simplify...
         UI_name.text = kLadybugShieldName
         // canceled by removing from superview
-        if (UI_ladybug_image != nil) {
-            UI_ladybug_image.hidden = true
-        }
+//        if (UI_ladybug_image != nil) {
+//            UI_ladybug_image.hidden = true
+//        }
     }
     func ladybugDidUpdateCurrent_pH(pH_current:String) {
         UI_pH_current.text = pH_current

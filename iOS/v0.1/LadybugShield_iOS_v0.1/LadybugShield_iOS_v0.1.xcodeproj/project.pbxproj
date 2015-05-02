@@ -14,6 +14,7 @@
 		F01EE7F71AD7164500A6EAF0 /* LadybugShield_iOS_v0_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01EE7F61AD7164500A6EAF0 /* LadybugShield_iOS_v0_1Tests.swift */; };
 		F04B8A1C1AD825A10016CED6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B8A1B1AD825A10016CED6 /* HomeViewController.swift */; };
 		F04B8A281ADF246F0016CED6 /* BTDiscovery04152015.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B8A271ADF246F0016CED6 /* BTDiscovery04152015.swift */; };
+		F06146F31AF0E2B9007F36EA /* Measurements.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F06146F11AF0E2B9007F36EA /* Measurements.xcdatamodeld */; };
 		F0A868781AE1396C00D49B86 /* LadybugShield.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A868771AE1396C00D49B86 /* LadybugShield.swift */; };
 		F0A8687A1AE1553A00D49B86 /* BTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A868791AE1553A00D49B86 /* BTService.swift */; };
 		F0DB75E51AEA7E86004AC7F5 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB75E41AEA7E86004AC7F5 /* SetupViewController.swift */; };
@@ -42,6 +43,7 @@
 		F04B8A1B1AD825A10016CED6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F04B8A201ADD6B280016CED6 /* LadybugShield_iOS_v0.1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LadybugShield_iOS_v0.1-Bridging-Header.h"; sourceTree = "<group>"; };
 		F04B8A271ADF246F0016CED6 /* BTDiscovery04152015.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDiscovery04152015.swift; sourceTree = "<group>"; };
+		F06146F21AF0E2B9007F36EA /* Measurements.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Measurements.xcdatamodel; sourceTree = "<group>"; };
 		F0A868771AE1396C00D49B86 /* LadybugShield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LadybugShield.swift; sourceTree = "<group>"; };
 		F0A868791AE1553A00D49B86 /* BTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTService.swift; sourceTree = "<group>"; };
 		F0DB75E41AEA7E86004AC7F5 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				F01EE7E71AD7164500A6EAF0 /* Images.xcassets */,
 				F01EE7E91AD7164500A6EAF0 /* LaunchScreen.xib */,
 				F01EE7DE1AD7164500A6EAF0 /* Supporting Files */,
+				F06146F11AF0E2B9007F36EA /* Measurements.xcdatamodeld */,
 			);
 			path = LadybugShield_iOS_v0.1;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F04B8A281ADF246F0016CED6 /* BTDiscovery04152015.swift in Sources */,
+				F06146F31AF0E2B9007F36EA /* Measurements.xcdatamodeld in Sources */,
 				F01EE7E11AD7164500A6EAF0 /* AppDelegate.swift in Sources */,
 				F0A8687A1AE1553A00D49B86 /* BTService.swift in Sources */,
 				F04B8A1C1AD825A10016CED6 /* HomeViewController.swift in Sources */,
@@ -448,6 +452,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F06146F11AF0E2B9007F36EA /* Measurements.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F06146F21AF0E2B9007F36EA /* Measurements.xcdatamodel */,
+			);
+			currentVersion = F06146F21AF0E2B9007F36EA /* Measurements.xcdatamodel */;
+			path = Measurements.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F01EE7D31AD7164500A6EAF0 /* Project object */;
 }
