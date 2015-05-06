@@ -23,7 +23,9 @@ protocol LadybugShieldDelegate:class {
     func ladybugDidUpdateSetPoint_pH(pH_set_point:String)
     func ladybugDidUpdateCurrent_EC(EC_current:String)
     func ladybugDidUpdateSetPoint_EC(EC_set_point:String)
+    func ladybugDidGetPumpState(pump_state:UInt8)
     func ladybugDidUpdateTypeAndStageRows(type_row:Int ,stage_row:Int)
+    func ladybugDidUpdatePumpState(pump_state_byte:UInt8)
     func ladybugDidConnectToShield()
 }
 class LadybugShield:NSObject,BTDiscoveryDelegate,BTServiceDelegate {
@@ -186,20 +188,21 @@ class LadybugShield:NSObject,BTDiscoveryDelegate,BTServiceDelegate {
     func BLEDidConnect(peripheral:CBPeripheral!){
         println("--> connected to ladybug shield")
         isConnected = true
+        btService.peripheral = peripheral
+        btService.getData()
         if (delegate != nil) {
             delegate!.ladybugDidConnectToShield()
         }
-        btService.peripheral = peripheral
-        btService.getData()
         
     }
-    func BLEDidUpdateReadings(pH_current_string:String,pH_set_point_string:String,EC_current_string:String, EC_set_point_string:String,plant_type_byte:Int,plant_stage_byte:Int)
+    func BLEDidUpdateReadings(pH_current_string:String,pH_set_point_string:String,EC_current_string:String, EC_set_point_string:String,plant_type_byte:Int,plant_stage_byte:Int,pump_state_byte:UInt8)
     {
         if (delegate != nil) {
             delegate!.ladybugDidUpdateCurrent_pH(pH_current_string)
             delegate!.ladybugDidUpdateSetPoint_pH(pH_set_point_string)
             delegate!.ladybugDidUpdateSetPoint_EC(EC_set_point_string)
             delegate!.ladybugDidUpdateCurrent_EC(EC_current_string)
+            delegate!.ladybugDidUpdatePumpState(pump_state_byte)
             //if the index values are out of range, don't tell the view controller
             //there is info on the plant type and growth stage - because received
             //bad data...
@@ -213,10 +216,18 @@ class LadybugShield:NSObject,BTDiscoveryDelegate,BTServiceDelegate {
         }
         
     }
+    func BLEDidGetPumpState(pump_state:UInt8) {
+        if (delegate != nil){
+            delegate!.ladybugDidGetPumpState(pump_state)
+        }
+    }
     func start_pumping() {
         btService.start_pumping()
     }
     func stop_pumping() {
         btService.stop_pumping()
+    }
+    func  get_pump_state() {
+        btService.get_pump_state()
     }
 }

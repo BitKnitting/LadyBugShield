@@ -18,6 +18,9 @@ let ladybug = LadybugShield()
 
 class HomeViewController: UIViewController,UIPickerViewDelegate,LadybugShieldDelegate {
     let device_name = kLadybugShieldName
+    var c_previous_pump_state:UInt8 = 0   //the pump state is known by the shield
+    let OFF:UInt8 = 0
+    let ON: UInt8 = 1
     enum picker_component:Int {
         case plant_type=0
         case growth_stage=1
@@ -28,10 +31,12 @@ class HomeViewController: UIViewController,UIPickerViewDelegate,LadybugShieldDel
     @IBAction func UI_pump_button(sender: UIButton) {
         pumping = !pumping
         if (!pumping){
+            c_previous_pump_state = OFF
             ladybug.stop_pumping()
             UI_pump_button_object.backgroundColor = UIColor.greenColor()
             UI_pump_button_object.setTitle("Start Pump", forState: UIControlState.Normal)
         }else {
+            c_previous_pump_state = ON
             UI_pump_button_object.backgroundColor = UIColor.redColor()
             UI_pump_button_object.setTitle("Stop Pump", forState: UIControlState.Normal)
             ladybug.start_pumping()
@@ -51,7 +56,6 @@ class HomeViewController: UIViewController,UIPickerViewDelegate,LadybugShieldDel
         UI_pump_button_object.backgroundColor = UIColor.greenColor()
         ladybug.delegate = self
         ladybug.get_pH_and_EC(kLadybugShieldName, timeout:5)
-
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -93,7 +97,8 @@ class HomeViewController: UIViewController,UIPickerViewDelegate,LadybugShieldDel
         println("---> LadybugDidNotFindShield")
     }
     func ladybugDidConnectToShield() {
-        //set the name, type, and stage info so the grower knows what kind of plant type and stage will be/is growing 
+//   TODO (maybe) - not tested     ladybug.get_pump_state()
+        //set the name, type, and stage info so the grower knows what kind of plant type and stage will be/is growing
         //in the nutrient bath.  First ask the shield what it thinks it is growing.  If the app can get the type and stage
         //from the shield, use that to set the plant info.  If not, use defaults.
         //Note: for now, type and stage are global String variables because they are used across classes.  A better mechanism would
@@ -139,6 +144,35 @@ class HomeViewController: UIViewController,UIPickerViewDelegate,LadybugShieldDel
         UI_plant_type.text = type
         stage = plant_info.stage_string
         change_stage_image()
+    }
+    //after connecting with a shield, the pump_state (whether its ok for the Shield/Arduino to pump or not) is sent back.  This event then updates the pump state button.
+    //not tested enough!
+    func ladybugDidGetPumpState(pump_state: UInt8) {
+        if (pump_state == 0){  //it is ok to pump
+            ladybug.stop_pumping()
+            UI_pump_button_object.backgroundColor = UIColor.greenColor()
+            UI_pump_button_object.setTitle("Start Pump", forState: UIControlState.Normal)
+        }else {
+            UI_pump_button_object.backgroundColor = UIColor.redColor()
+            UI_pump_button_object.setTitle("Stop Pump", forState: UIControlState.Normal)
+            ladybug.start_pumping()
+        }
+    }
+    func ladybugDidUpdatePumpState(pump_state_byte:UInt8) {
+        if c_previous_pump_state != pump_state_byte {
+            if (pump_state_byte == 0){  //it is ok to pump
+                ladybug.stop_pumping()
+                UI_pump_button_object.backgroundColor = UIColor.greenColor()
+                UI_pump_button_object.setTitle("Start Pump", forState: UIControlState.Normal)
+            }else {
+                UI_pump_button_object.backgroundColor = UIColor.redColor()
+                UI_pump_button_object.setTitle("Stop Pump", forState: UIControlState.Normal)
+                ladybug.start_pumping()
+            }
+            c_previous_pump_state = pump_state_byte
+            pumping = !pumping
+        }
+        
     }
     /*
     // MARK: - Navigation
