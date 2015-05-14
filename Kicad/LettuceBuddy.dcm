@@ -1,9 +1,21 @@
-EESchema-DOCLIB  Version 2.0  Date: 2/8/2015 4:25:30 AM
+EESchema-DOCLIB  Version 2.0  Date: 5/13/2015 12:44:03 PM
 #
 $CMP ADS1015
 D ADC 50MHz 8 bits
 K ADC 
 F analog-dev/AD9283.pdf
+$ENDCMP
+#
+$CMP LB_MOSFET_N
+F transistors/mos/*.*
+$ENDCMP
+#
+$CMP MOS_N
+F transistors/mos/*.*
+$ENDCMP
+#
+$CMP MOSFET_N
+F transistors/mos/*.*
 $ENDCMP
 #
 #End Doc Library

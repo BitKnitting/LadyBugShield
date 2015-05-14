@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F01EE7E11AD7164500A6EAF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01EE7E01AD7164500A6EAF0 /* AppDelegate.swift */; };
+		F01EE7E61AD7164500A6EAF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F01EE7E41AD7164500A6EAF0 /* Main.storyboard */; };
+		F01EE7E81AD7164500A6EAF0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F01EE7E71AD7164500A6EAF0 /* Images.xcassets */; };
+		F01EE7EB1AD7164500A6EAF0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F01EE7E91AD7164500A6EAF0 /* LaunchScreen.xib */; };
+		F01EE7F71AD7164500A6EAF0 /* LadybugShield_iOS_v0_1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01EE7F61AD7164500A6EAF0 /* LadybugShield_iOS_v0_1Tests.swift */; };
+		F04B8A1C1AD825A10016CED6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B8A1B1AD825A10016CED6 /* HomeViewController.swift */; };
+		F04B8A281ADF246F0016CED6 /* BTDiscovery04152015.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04B8A271ADF246F0016CED6 /* BTDiscovery04152015.swift */; };
+		F06146F31AF0E2B9007F36EA /* Measurements.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F06146F11AF0E2B9007F36EA /* Measurements.xcdatamodeld */; };
+		F0A868781AE1396C00D49B86 /* LadybugShield.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A868771AE1396C00D49B86 /* LadybugShield.swift */; };
+		F0A8687A1AE1553A00D49B86 /* BTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A868791AE1553A00D49B86 /* BTService.swift */; };
+		F0DB75E51AEA7E86004AC7F5 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DB75E41AEA7E86004AC7F5 /* SetupViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F01EE7F11AD7164500A6EAF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F01EE7D31AD7164500A6EAF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F01EE7DA1AD7164500A6EAF0;
+			remoteInfo = LadybugShield_iOS_v0.1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F01EE7DB1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LadybugShield_iOS_v0.1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F01EE7DF1AD7164500A6EAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F01EE7E01AD7164500A6EAF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F01EE7E51AD7164500A6EAF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F01EE7E71AD7164500A6EAF0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F01EE7EA1AD7164500A6EAF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F01EE7F01AD7164500A6EAF0 /* LadybugShield_iOS_v0.1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LadybugShield_iOS_v0.1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F01EE7F51AD7164500A6EAF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F01EE7F61AD7164500A6EAF0 /* LadybugShield_iOS_v0_1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadybugShield_iOS_v0_1Tests.swift; sourceTree = "<group>"; };
+		F04B8A1B1AD825A10016CED6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F04B8A201ADD6B280016CED6 /* LadybugShield_iOS_v0.1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LadybugShield_iOS_v0.1-Bridging-Header.h"; sourceTree = "<group>"; };
+		F04B8A271ADF246F0016CED6 /* BTDiscovery04152015.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDiscovery04152015.swift; sourceTree = "<group>"; };
+		F06146F21AF0E2B9007F36EA /* Measurements.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Measurements.xcdatamodel; sourceTree = "<group>"; };
+		F0A868771AE1396C00D49B86 /* LadybugShield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LadybugShield.swift; sourceTree = "<group>"; };
+		F0A868791AE1553A00D49B86 /* BTService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTService.swift; sourceTree = "<group>"; };
+		F0DB75E41AEA7E86004AC7F5 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F01EE7D81AD7164500A6EAF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F01EE7ED1AD7164500A6EAF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F01EE7D21AD7164500A6EAF0 = {
+			isa = PBXGroup;
+			children = (
+				F01EE7DD1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1 */,
+				F01EE7F31AD7164500A6EAF0 /* LadybugShield_iOS_v0.1Tests */,
+				F01EE7DC1AD7164500A6EAF0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F01EE7DC1AD7164500A6EAF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F01EE7DB1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1.app */,
+				F01EE7F01AD7164500A6EAF0 /* LadybugShield_iOS_v0.1Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F01EE7DD1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1 */ = {
+			isa = PBXGroup;
+			children = (
+				F04B8A1D1ADD3ABD0016CED6 /* Libraries */,
+				F04B8A1B1AD825A10016CED6 /* HomeViewController.swift */,
+				F0DB75E41AEA7E86004AC7F5 /* SetupViewController.swift */,
+				F01EE7E01AD7164500A6EAF0 /* AppDelegate.swift */,
+				F01EE7E41AD7164500A6EAF0 /* Main.storyboard */,
+				F01EE7E71AD7164500A6EAF0 /* Images.xcassets */,
+				F01EE7E91AD7164500A6EAF0 /* LaunchScreen.xib */,
+				F01EE7DE1AD7164500A6EAF0 /* Supporting Files */,
+				F06146F11AF0E2B9007F36EA /* Measurements.xcdatamodeld */,
+			);
+			path = LadybugShield_iOS_v0.1;
+			sourceTree = "<group>";
+		};
+		F01EE7DE1AD7164500A6EAF0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F01EE7DF1AD7164500A6EAF0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F01EE7F31AD7164500A6EAF0 /* LadybugShield_iOS_v0.1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F01EE7F61AD7164500A6EAF0 /* LadybugShield_iOS_v0_1Tests.swift */,
+				F01EE7F41AD7164500A6EAF0 /* Supporting Files */,
+			);
+			path = LadybugShield_iOS_v0.1Tests;
+			sourceTree = "<group>";
+		};
+		F01EE7F41AD7164500A6EAF0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F01EE7F51AD7164500A6EAF0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F04B8A1D1ADD3ABD0016CED6 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F04B8A271ADF246F0016CED6 /* BTDiscovery04152015.swift */,
+				F04B8A201ADD6B280016CED6 /* LadybugShield_iOS_v0.1-Bridging-Header.h */,
+				F0A868771AE1396C00D49B86 /* LadybugShield.swift */,
+				F0A868791AE1553A00D49B86 /* BTService.swift */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F01EE7DA1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F01EE7FA1AD7164500A6EAF0 /* Build configuration list for PBXNativeTarget "LadybugShield_iOS_v0.1" */;
+			buildPhases = (
+				F01EE7D71AD7164500A6EAF0 /* Sources */,
+				F01EE7D81AD7164500A6EAF0 /* Frameworks */,
+				F01EE7D91AD7164500A6EAF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LadybugShield_iOS_v0.1;
+			productName = LadybugShield_iOS_v0.1;
+			productReference = F01EE7DB1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F01EE7EF1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F01EE7FD1AD7164500A6EAF0 /* Build configuration list for PBXNativeTarget "LadybugShield_iOS_v0.1Tests" */;
+			buildPhases = (
+				F01EE7EC1AD7164500A6EAF0 /* Sources */,
+				F01EE7ED1AD7164500A6EAF0 /* Frameworks */,
+				F01EE7EE1AD7164500A6EAF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F01EE7F21AD7164500A6EAF0 /* PBXTargetDependency */,
+			);
+			name = LadybugShield_iOS_v0.1Tests;
+			productName = LadybugShield_iOS_v0.1Tests;
+			productReference = F01EE7F01AD7164500A6EAF0 /* LadybugShield_iOS_v0.1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F01EE7D31AD7164500A6EAF0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Margaret Johnson";
+				TargetAttributes = {
+					F01EE7DA1AD7164500A6EAF0 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					F01EE7EF1AD7164500A6EAF0 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = F01EE7DA1AD7164500A6EAF0;
+					};
+				};
+			};
+			buildConfigurationList = F01EE7D61AD7164500A6EAF0 /* Build configuration list for PBXProject "LadybugShield_iOS_v0.1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F01EE7D21AD7164500A6EAF0;
+			productRefGroup = F01EE7DC1AD7164500A6EAF0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F01EE7DA1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1 */,
+				F01EE7EF1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F01EE7D91AD7164500A6EAF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F01EE7E61AD7164500A6EAF0 /* Main.storyboard in Resources */,
+				F01EE7EB1AD7164500A6EAF0 /* LaunchScreen.xib in Resources */,
+				F01EE7E81AD7164500A6EAF0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F01EE7EE1AD7164500A6EAF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F01EE7D71AD7164500A6EAF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F04B8A281ADF246F0016CED6 /* BTDiscovery04152015.swift in Sources */,
+				F06146F31AF0E2B9007F36EA /* Measurements.xcdatamodeld in Sources */,
+				F01EE7E11AD7164500A6EAF0 /* AppDelegate.swift in Sources */,
+				F0A8687A1AE1553A00D49B86 /* BTService.swift in Sources */,
+				F04B8A1C1AD825A10016CED6 /* HomeViewController.swift in Sources */,
+				F0DB75E51AEA7E86004AC7F5 /* SetupViewController.swift in Sources */,
+				F0A868781AE1396C00D49B86 /* LadybugShield.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F01EE7EC1AD7164500A6EAF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F01EE7F71AD7164500A6EAF0 /* LadybugShield_iOS_v0_1Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F01EE7F21AD7164500A6EAF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F01EE7DA1AD7164500A6EAF0 /* LadybugShield_iOS_v0.1 */;
+			targetProxy = F01EE7F11AD7164500A6EAF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F01EE7E41AD7164500A6EAF0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F01EE7E51AD7164500A6EAF0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F01EE7E91AD7164500A6EAF0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F01EE7EA1AD7164500A6EAF0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F01EE7F81AD7164500A6EAF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F01EE7F91AD7164500A6EAF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F01EE7FB1AD7164500A6EAF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = LadybugShield_iOS_v0.1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LadybugShield_iOS_v0.1/LadybugShield_iOS_v0.1-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F01EE7FC1AD7164500A6EAF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = LadybugShield_iOS_v0.1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LadybugShield_iOS_v0.1/LadybugShield_iOS_v0.1-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		F01EE7FE1AD7164500A6EAF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LadybugShield_iOS_v0.1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LadybugShield_iOS_v0.1.app/LadybugShield_iOS_v0.1";
+			};
+			name = Debug;
+		};
+		F01EE7FF1AD7164500A6EAF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LadybugShield_iOS_v0.1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LadybugShield_iOS_v0.1.app/LadybugShield_iOS_v0.1";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F01EE7D61AD7164500A6EAF0 /* Build configuration list for PBXProject "LadybugShield_iOS_v0.1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F01EE7F81AD7164500A6EAF0 /* Debug */,
+				F01EE7F91AD7164500A6EAF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F01EE7FA1AD7164500A6EAF0 /* Build configuration list for PBXNativeTarget "LadybugShield_iOS_v0.1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F01EE7FB1AD7164500A6EAF0 /* Debug */,
+				F01EE7FC1AD7164500A6EAF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F01EE7FD1AD7164500A6EAF0 /* Build configuration list for PBXNativeTarget "LadybugShield_iOS_v0.1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F01EE7FE1AD7164500A6EAF0 /* Debug */,
+				F01EE7FF1AD7164500A6EAF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F06146F11AF0E2B9007F36EA /* Measurements.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F06146F21AF0E2B9007F36EA /* Measurements.xcdatamodel */,
+			);
+			currentVersion = F06146F21AF0E2B9007F36EA /* Measurements.xcdatamodel */;
+			path = Measurements.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F01EE7D31AD7164500A6EAF0 /* Project object */;
+}
