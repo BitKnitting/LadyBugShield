@@ -1,4 +1,4 @@
-update=12/26/2014 6:19:37 AM
+update=5/13/2015 5:16:37 AM
 version=1
 last_client=pcbnew
 [cvpcb]
@@ -53,10 +53,10 @@ version=1
 version=1
 LastNetListRead=
 UseCmpFile=1
-PadDrill=0.970000000000
-PadDrillOvalY=0.970000000000
-PadSizeH=1.500000000000
-PadSizeV=1.500000000000
+PadDrill=1.300000000000
+PadDrillOvalY=1.300000000000
+PadSizeH=2.400000000000
+PadSizeV=2.400000000000
 PcbTextSizeV=1.500000000000
 PcbTextSizeH=1.500000000000
 PcbTextThickness=0.300000000000
@@ -91,3 +91,4 @@ LibName18=oshw-logo-kicad-copper-10mm
 LibName19=OSHW-100px-Front-CU
 LibName20=OSHW-100px-Front-SM
 LibName21=LadybugLogoV1
+LibName22=Ladybug Logo/LadybugLogoV1

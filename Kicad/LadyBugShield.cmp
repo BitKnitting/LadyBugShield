@@ -1,10 +1,10 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 3/26/2015 3:58:49 AM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 5/11/2015 1:25:03 PM
 
 BeginCmp
 TimeStamp = /547DE474/53E0F48C;
 Reference = ARD1;
 ValeurCmp = ARDUINOPINS;
-IdModule  = LB_CONN_2;
+IdModule  = ArduinoLettuceBuddy;
 EndCmp
 
 BeginCmp
@@ -85,13 +85,6 @@ IdModule  = SOD-123;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE6F9/540ED65C;
-Reference = D3;
-ValeurCmp = LED;
-IdModule  = SM1206;
-EndCmp
-
-BeginCmp
 TimeStamp = /547DE5B0/54C79A3D/54C79AD0;
 Reference = D4;
 ValeurCmp = DIODE;
@@ -134,13 +127,6 @@ IdModule  = LB_CONN_6;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE474/5512F566;
-Reference = P2;
-ValeurCmp = CONN_2;
-IdModule  = LB_CONN_2;
-EndCmp
-
-BeginCmp
 TimeStamp = /54903E24;
 Reference = P3;
 ValeurCmp = BNC;
@@ -152,13 +138,6 @@ TimeStamp = /54903E31;
 Reference = P4;
 ValeurCmp = BNC;
 IdModule  = LB_BNC;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE474/5512F560;
-Reference = P5;
-ValeurCmp = CONN_2;
-IdModule  = LB_CONN_2;
 EndCmp
 
 BeginCmp
@@ -183,9 +162,9 @@ IdModule  = DPAK2;
 EndCmp
 
 BeginCmp
-TimeStamp = /547DE5B0/54C7AF06/54C8E8C1;
+TimeStamp = /547DE5B0/54C7AF06/552BD149;
 Reference = Q4;
-ValeurCmp = MOSFET_N;
+ValeurCmp = LB_MOSFET_N;
 IdModule  = LB_MOSFET;
 EndCmp
 
@@ -214,13 +193,6 @@ BeginCmp
 TimeStamp = /547DE5B0/54C79A3D/54C79ABE;
 Reference = R4;
 ValeurCmp = 10K;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /547DE6F9/540EDC27;
-Reference = R5;
-ValeurCmp = 1K;
 IdModule  = SM0805;
 EndCmp
 
