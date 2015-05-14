@@ -42,3 +42,6 @@ Kicad/Gerbers/
 LBS-TEST1/Gerbers/
 #Don’t include Sketchup files
 Sketchup/
+#######################
+#Don’t include iOS files
+iOS/
